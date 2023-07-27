@@ -1,0 +1,1682 @@
+
+chtMultiRegionFoam has been superseded and replaced by the more general
+foamMultiRun solver module executor which will be executed instead:
+
+/*---------------------------------------------------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  11
+     \\/     M anipulation  |
+\*---------------------------------------------------------------------------*/
+Build  : 11-d496a603da00
+Exec   : foamMultiRun
+Date   : Jul 27 2023
+Time   : 13:21:24
+Host   : "photon"
+PID    : 1646740
+I/O    : uncollated
+Case   : /home/sambath/cloud/multiRegionTutorial
+nProcs : 1
+sigFpe : Enabling floating point exception trapping (FOAM_SIGFPE).
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster (fileModificationSkew 10)
+allowSystemOperations : Allowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+Selecting solver solid
+Selecting thermodynamics package 
+{
+    type            heSolidThermo;
+    mixture         pureMixture;
+    transport       constIsoSolid;
+    thermo          eConst;
+    equationOfState rhoConst;
+    specie          specie;
+    energy          sensibleInternalEnergy;
+}
+
+Selecting default solid thermophysical transport model isotropic
+Diffusion Number mean: 0.0041340906 max: 0.0053232286
+--> FOAM Warning : Creating fvModels from "system/fvOptions" rather than constant/fvModels
+--> FOAM Warning : Creating fvConstraints from "system/fvOptions"
+
+Selecting solver fluid
+Selecting thermodynamics package 
+{
+    type            heRhoThermo;
+    mixture         pureMixture;
+    transport       const;
+    thermo          hConst;
+    equationOfState rhoConst;
+    specie          specie;
+    energy          sensibleEnthalpy;
+}
+
+Selecting turbulence model type laminar
+Selecting laminar stress model Stokes
+No MRF models present
+
+Courant Number mean: 0.00014798013 max: 0.0001510574
+Selecting thermophysical transport type laminar
+Selecting default laminar thermophysical transport model unityLewisFourier
+
+PIMPLE: Region battery1
+PIMPLE: No convergence criteria found
+
+
+PIMPLE: Region Air
+PIMPLE: Convergence criteria found
+        p_rgh: tolerance 0.001
+
+
+PIMPLE: Operating solver in transient mode with 1 outer corrector
+PIMPLE: Operating solver in PISO mode
+
+
+
+Starting time loop
+
+battery1 Diffusion Number mean: 0.0041340906 max: 0.0053232286
+Air      Courant Number mean: 0.00014798013 max: 0.0001510574
+         deltaT = 0.001199904
+         Time = 0.0011999s
+         
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+battery1 DICPCG:  Solving for e, Initial residual = 0.025461009, Final residual = 2.541106e-08, No Iterations 1
+Air      DILUPBiCGStab:  Solving for h, Initial residual = 2.0697481e-05, Final residual = 3.2672997e-14, No Iterations 1
+Air      GAMG:  Solving for p_rgh, Initial residual = 0.97083011, Final residual = 0.004356376, No Iterations 7
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+Air      time step continuity errors : sum local = 4.6977686e-07, global = 2.933308e-17, cumulative = 2.933308e-17
+Air      GAMG:  Solving for p_rgh, Initial residual = 0.031377243, Final residual = 9.4104021e-08, No Iterations 17
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+Air      time step continuity errors : sum local = 1.4851029e-12, global = 2.9235456e-17, cumulative = 5.8568536e-17
+         ExecutionTime = 2.620523 s  ClockTime = 3 s
+         
+battery1 Diffusion Number mean: 0.0049605118 max: 0.0063873633
+Air      Courant Number mean: 6.9944331e-11 max: 1.3429281e-08
+         deltaT = 0.001439712
+         Time = 0.00263962s
+         
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+battery1 DICPCG:  Solving for e, Initial residual = 0.025665053, Final residual = 4.5835914e-08, No Iterations 1
+Air      DILUPBiCGStab:  Solving for h, Initial residual = 0.9999995, Final residual = 1.2594761e-11, No Iterations 1
+Air      GAMG:  Solving for p_rgh, Initial residual = 0.68951225, Final residual = 0.002216799, No Iterations 5
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+Air      time step continuity errors : sum local = 3.52558e-08, global = -3.6902085e-17, cumulative = 2.1666451e-17
+Air      GAMG:  Solving for p_rgh, Initial residual = 0.0037240214, Final residual = 8.9259405e-08, No Iterations 23
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+Air      time step continuity errors : sum local = 8.0334015e-13, global = -3.6872791e-17, cumulative = -1.5206339e-17
+         ExecutionTime = 3.770298 s  ClockTime = 4 s
+         
+battery1 Diffusion Number mean: 0.0059518999 max: 0.0076639162
+Air      Courant Number mean: 8.7020353e-08 max: 3.4505084e-05
+         deltaT = 0.0017275549
+         Time = 0.00436717s
+         
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+battery1 DICPCG:  Solving for e, Initial residual = 0.99992934, Final residual = 4.4734175e-12, No Iterations 2
+Air      DILUPBiCGStab:  Solving for h, Initial residual = 0.97710894, Final residual = 1.9053546e-11, No Iterations 1
+Air      GAMG:  Solving for p_rgh, Initial residual = 0.35971134, Final residual = 0.0023545226, No Iterations 2
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+Air      time step continuity errors : sum local = 2.454811e-08, global = -3.0226586e-17, cumulative = -4.5432926e-17
+Air      GAMG:  Solving for p_rgh, Initial residual = 0.003024295, Final residual = 6.7563795e-08, No Iterations 13
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+Air      time step continuity errors : sum local = 5.4772631e-13, global = -3.0493564e-17, cumulative = -7.5926489e-17
+         ExecutionTime = 4.677464 s  ClockTime = 5 s
+         
+battery1 Diffusion Number mean: 0.0071418685 max: 0.0091961698
+Air      Courant Number mean: 1.1072415e-07 max: 4.8150114e-05
+         deltaT = 0.0020729226
+         Time = 0.00644009s
+         
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+battery1 DICPCG:  Solving for e, Initial residual = 0.37850604, Final residual = 3.476856e-12, No Iterations 2
+Air      DILUPBiCGStab:  Solving for h, Initial residual = 0.0067305056, Final residual = 2.4381372e-13, No Iterations 1
+Air      GAMG:  Solving for p_rgh, Initial residual = 0.22993296, Final residual = 0.00052510637, No Iterations 2
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+Air      time step continuity errors : sum local = 5.1681891e-09, global = 9.6589006e-18, cumulative = -6.6267589e-17
+Air      GAMG:  Solving for p_rgh, Initial residual = 0.00065985751, Final residual = 9.1440265e-08, No Iterations 8
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+Air      time step continuity errors : sum local = 7.3213348e-13, global = 9.6570724e-18, cumulative = -5.6610517e-17
+         ExecutionTime = 5.694571 s  ClockTime = 6 s
+         
+battery1 Diffusion Number mean: 0.0085696498 max: 0.011034641
+Air      Courant Number mean: 1.3239033e-07 max: 5.974711e-05
+         deltaT = 0.0024871976
+         Time = 0.00892729s
+         
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+battery1 DICPCG:  Solving for e, Initial residual = 0.22437753, Final residual = 4.2556603e-12, No Iterations 2
+Air      DILUPBiCGStab:  Solving for h, Initial residual = 0.001006085, Final residual = 7.7627971e-14, No Iterations 1
+Air      GAMG:  Solving for p_rgh, Initial residual = 0.19511731, Final residual = 0.00050558765, No Iterations 2
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+Air      time step continuity errors : sum local = 5.0449734e-09, global = 4.3495226e-17, cumulative = -1.311529e-17
+Air      GAMG:  Solving for p_rgh, Initial residual = 0.00062125013, Final residual = 4.5030001e-08, No Iterations 9
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+Air      time step continuity errors : sum local = 3.8636719e-13, global = 4.3724722e-17, cumulative = 3.0609432e-17
+         ExecutionTime = 6.89197 s  ClockTime = 7 s
+         
+battery1 Diffusion Number mean: 0.0102823 max: 0.013239921
+Air      Courant Number mean: 1.6250855e-07 max: 7.2978739e-05
+         deltaT = 0.0029841914
+         Time = 0.0119115s
+         
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+battery1 DICPCG:  Solving for e, Initial residual = 0.16734528, Final residual = 6.548003e-12, No Iterations 2
+Air      DILUPBiCGStab:  Solving for h, Initial residual = 0.0003420282, Final residual = 5.1635716e-14, No Iterations 1
+Air      GAMG:  Solving for p_rgh, Initial residual = 0.16536867, Final residual = 0.00054635595, No Iterations 2
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+Air      time step continuity errors : sum local = 5.7998082e-09, global = 2.9572841e-17, cumulative = 6.0182273e-17
+Air      GAMG:  Solving for p_rgh, Initial residual = 0.0006590149, Final residual = 6.5986412e-08, No Iterations 9
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+Air      time step continuity errors : sum local = 6.1246844e-13, global = 2.9498781e-17, cumulative = 8.9681054e-17
+         ExecutionTime = 8.03362 s  ClockTime = 8 s
+         
+battery1 Diffusion Number mean: 0.012336917 max: 0.015885533
+Air      Courant Number mean: 1.9704709e-07 max: 8.8599462e-05
+         deltaT = 0.00357996
+         Time = 0.0154914s
+         
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+battery1 DICPCG:  Solving for e, Initial residual = 0.1380564, Final residual = 1.1128028e-11, No Iterations 2
+Air      DILUPBiCGStab:  Solving for h, Initial residual = 0.00016227726, Final residual = 4.3280326e-14, No Iterations 1
+Air      GAMG:  Solving for p_rgh, Initial residual = 0.15057721, Final residual = 0.00057445673, No Iterations 2
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+Air      time step continuity errors : sum local = 6.6177941e-09, global = -1.8460168e-17, cumulative = 7.1220886e-17
+Air      GAMG:  Solving for p_rgh, Initial residual = 0.00069096194, Final residual = 5.6936383e-08, No Iterations 9
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+Air      time step continuity errors : sum local = 5.7774187e-13, global = -1.8395251e-17, cumulative = 5.2825635e-17
+         ExecutionTime = 9.016068 s  ClockTime = 9 s
+         
+battery1 Diffusion Number mean: 0.014799879 max: 0.019056946
+Air      Courant Number mean: 2.4151816e-07 max: 0.00010718737
+         deltaT = 0.0042944123
+         Time = 0.0197859s
+         
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+battery1 DICPCG:  Solving for e, Initial residual = 0.12048576, Final residual = 1.9981319e-11, No Iterations 2
+Air      DILUPBiCGStab:  Solving for h, Initial residual = 8.2975732e-05, Final residual = 3.946998e-14, No Iterations 1
+Air      GAMG:  Solving for p_rgh, Initial residual = 0.13935756, Final residual = 0.00060070871, No Iterations 2
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+Air      time step continuity errors : sum local = 7.6409012e-09, global = 2.788683e-17, cumulative = 8.0712465e-17
+Air      GAMG:  Solving for p_rgh, Initial residual = 0.0007230054, Final residual = 6.1669554e-08, No Iterations 9
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+Air      time step continuity errors : sum local = 6.8731996e-13, global = 2.7784427e-17, cumulative = 1.0849689e-16
+         ExecutionTime = 9.828521 s  ClockTime = 10 s
+         
+battery1 Diffusion Number mean: 0.017753489 max: 0.022860138
+Air      Courant Number mean: 2.9680275e-07 max: 0.00012946643
+         deltaT = 0.0051524079
+         Time = 0.0249383s
+         
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+battery1 DICPCG:  Solving for e, Initial residual = 0.10897932, Final residual = 3.7164269e-11, No Iterations 2
+Air      DILUPBiCGStab:  Solving for h, Initial residual = 4.9060872e-05, Final residual = 3.88535e-14, No Iterations 1
+Air      GAMG:  Solving for p_rgh, Initial residual = 0.13110279, Final residual = 0.00062761933, No Iterations 2
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+Air      time step continuity errors : sum local = 8.9236658e-09, global = 4.3503447e-18, cumulative = 1.1284724e-16
+Air      GAMG:  Solving for p_rgh, Initial residual = 0.00075610911, Final residual = 8.3419694e-08, No Iterations 8
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+Air      time step continuity errors : sum local = 1.0479702e-12, global = 4.5588111e-18, cumulative = 1.1740605e-16
+         ExecutionTime = 10.63867 s  ClockTime = 11 s
+         
+battery1 Diffusion Number mean: 0.021300521 max: 0.027427445
+Air      Courant Number mean: 3.6370965e-07 max: 0.00015612033
+         deltaT = 0.0061803356
+         Time = 0.0311186s
+         
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+battery1 DICPCG:  Solving for e, Initial residual = 0.10095746, Final residual = 7.0621639e-11, No Iterations 2
+Air      DILUPBiCGStab:  Solving for h, Initial residual = 3.0490057e-05, Final residual = 3.9729983e-14, No Iterations 1
+Air      GAMG:  Solving for p_rgh, Initial residual = 0.12573888, Final residual = 0.00064636541, No Iterations 2
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+Air      time step continuity errors : sum local = 1.0359143e-08, global = -6.4514594e-18, cumulative = 1.1095459e-16
+Air      GAMG:  Solving for p_rgh, Initial residual = 0.00078122289, Final residual = 6.3453867e-08, No Iterations 9
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+Air      time step continuity errors : sum local = 9.0461772e-13, global = -6.6443803e-18, cumulative = 1.0431021e-16
+         ExecutionTime = 11.38974 s  ClockTime = 11 s
+         
+battery1 Diffusion Number mean: 0.025550067 max: 0.032899339
+Air      Courant Number mean: 4.4411415e-07 max: 0.00018797244
+         deltaT = 0.0074118077
+         Time = 0.0385304s
+         
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+battery1 DICPCG:  Solving for e, Initial residual = 0.095139861, Final residual = 1.3616328e-10, No Iterations 2
+Air      DILUPBiCGStab:  Solving for h, Initial residual = 2.0194463e-05, Final residual = 4.186905e-14, No Iterations 1
+Air      GAMG:  Solving for p_rgh, Initial residual = 0.12050938, Final residual = 0.00065371962, No Iterations 2
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+Air      time step continuity errors : sum local = 1.1888348e-08, global = 8.6199565e-17, cumulative = 1.9050977e-16
+Air      GAMG:  Solving for p_rgh, Initial residual = 0.00079433241, Final residual = 7.5993215e-08, No Iterations 8
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+Air      time step continuity errors : sum local = 1.2329261e-12, global = 8.603133e-17, cumulative = 2.765411e-16
+         ExecutionTime = 12.239589 s  ClockTime = 12 s
+         
+battery1 Diffusion Number mean: 0.030641084 max: 0.039454747
+Air      Courant Number mean: 5.4165045e-07 max: 0.00022603201
+         deltaT = 0.0088941693
+         Time = 0.0474246s
+         
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+battery1 DICPCG:  Solving for e, Initial residual = 0.090869744, Final residual = 2.6617431e-10, No Iterations 2
+Air      DILUPBiCGStab:  Solving for h, Initial residual = 1.3794709e-05, Final residual = 4.5566772e-14, No Iterations 1
+Air      GAMG:  Solving for p_rgh, Initial residual = 0.11783792, Final residual = 0.0006566162, No Iterations 2
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+Air      time step continuity errors : sum local = 1.3636168e-08, global = 7.9418023e-18, cumulative = 2.8448291e-16
+Air      GAMG:  Solving for p_rgh, Initial residual = 0.00080340294, Final residual = 9.3709623e-08, No Iterations 8
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+Air      time step continuity errors : sum local = 1.749742e-12, global = 7.6592781e-18, cumulative = 2.9214218e-16
+         ExecutionTime = 13.236044 s  ClockTime = 13 s
+         
+battery1 Diffusion Number mean: 0.036769301 max: 0.047345696
+Air      Courant Number mean: 6.6075177e-07 max: 0.00027172123
+         deltaT = 0.010667283
+         Time = 0.0580919s
+         
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+battery1 DICPCG:  Solving for e, Initial residual = 0.087595789, Final residual = 5.2270123e-10, No Iterations 2
+Air      DILUPBiCGStab:  Solving for h, Initial residual = 9.7159998e-06, Final residual = 5.0693534e-14, No Iterations 1
+Air      GAMG:  Solving for p_rgh, Initial residual = 0.11450936, Final residual = 0.00065289543, No Iterations 2
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+Air      time step continuity errors : sum local = 1.5531418e-08, global = -1.0675629e-17, cumulative = 2.8146655e-16
+Air      GAMG:  Solving for p_rgh, Initial residual = 0.00080575923, Final residual = 6.371727e-08, No Iterations 9
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+Air      time step continuity errors : sum local = 1.3619348e-12, global = -1.0490934e-17, cumulative = 2.7097562e-16
+         ExecutionTime = 14.18414 s  ClockTime = 14 s
+         
+battery1 Diffusion Number mean: 0.044099516 max: 0.056784388
+Air      Courant Number mean: 8.0591526e-07 max: 0.00032622666
+         deltaT = 0.012795249
+         Time = 0.0708871s
+         
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+battery1 DICPCG:  Solving for e, Initial residual = 0.085101122, Final residual = 1.0317802e-09, No Iterations 2
+Air      DILUPBiCGStab:  Solving for h, Initial residual = 7.2085186e-06, Final residual = 5.7749364e-14, No Iterations 1
+Air      GAMG:  Solving for p_rgh, Initial residual = 0.11257479, Final residual = 0.00065174531, No Iterations 2
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+Air      time step continuity errors : sum local = 1.7830051e-08, global = -8.8693839e-17, cumulative = 1.8228178e-16
+Air      GAMG:  Solving for p_rgh, Initial residual = 0.00081525921, Final residual = 6.899897e-08, No Iterations 8
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+Air      time step continuity errors : sum local = 1.7030751e-12, global = -8.8799898e-17, cumulative = 9.3481883e-17
+         ExecutionTime = 15.31615 s  ClockTime = 15 s
+         
+battery1 Diffusion Number mean: 0.052896716 max: 0.068112033
+Air      Courant Number mean: 9.8256777e-07 max: 0.00039143583
+         deltaT = 0.015346388
+         Time = 0.0862335s
+         
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+battery1 DICPCG:  Solving for e, Initial residual = 0.083177895, Final residual = 2.0412649e-09, No Iterations 2
+Air      DILUPBiCGStab:  Solving for h, Initial residual = 5.6228324e-06, Final residual = 6.7473214e-14, No Iterations 1
+Air      GAMG:  Solving for p_rgh, Initial residual = 0.11072096, Final residual = 0.00065131591, No Iterations 2
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+Air      time step continuity errors : sum local = 2.0546853e-08, global = -3.9204314e-17, cumulative = 5.4277569e-17
+Air      GAMG:  Solving for p_rgh, Initial residual = 0.00082616994, Final residual = 9.6988668e-08, No Iterations 8
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+Air      time step continuity errors : sum local = 2.7699983e-12, global = -3.907905e-17, cumulative = 1.5198519e-17
+         ExecutionTime = 16.482465 s  ClockTime = 16 s
+         
+battery1 Diffusion Number mean: 0.063443357 max: 0.08169233
+Air      Courant Number mean: 1.1970775e-06 max: 0.00046930994
+         deltaT = 0.018392888
+         Time = 0.104626s
+         
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+battery1 DICPCG:  Solving for e, Initial residual = 0.081650226, Final residual = 4.0282214e-09, No Iterations 2
+Air      DILUPBiCGStab:  Solving for h, Initial residual = 4.7312394e-06, Final residual = 8.2027202e-14, No Iterations 1
+Air      GAMG:  Solving for p_rgh, Initial residual = 0.10883777, Final residual = 0.00064674946, No Iterations 2
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+Air      time step continuity errors : sum local = 2.3557725e-08, global = -1.2233658e-18, cumulative = 1.3975153e-17
+Air      GAMG:  Solving for p_rgh, Initial residual = 0.00083901867, Final residual = 9.5099747e-08, No Iterations 8
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+Air      time step continuity errors : sum local = 3.1527293e-12, global = -9.4815225e-19, cumulative = 1.3027001e-17
+         ExecutionTime = 17.513052 s  ClockTime = 17 s
+         
+battery1 Diffusion Number mean: 0.076037864 max: 0.097909546
+Air      Courant Number mean: 1.4555379e-06 max: 0.00056189622
+         deltaT = 0.022038694
+         Time = 0.126665s
+         
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+battery1 DICPCG:  Solving for e, Initial residual = 0.080477452, Final residual = 7.9362844e-09, No Iterations 2
+Air      DILUPBiCGStab:  Solving for h, Initial residual = 4.1823907e-06, Final residual = 1.0438127e-13, No Iterations 1
+Air      GAMG:  Solving for p_rgh, Initial residual = 0.10757669, Final residual = 0.00064209004, No Iterations 2
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+Air      time step continuity errors : sum local = 2.7058998e-08, global = 6.7255719e-17, cumulative = 8.028272e-17
+Air      GAMG:  Solving for p_rgh, Initial residual = 0.00087553378, Final residual = 7.829338e-08, No Iterations 8
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+Air      time step continuity errors : sum local = 2.9878791e-12, global = 6.714326e-17, cumulative = 1.4742598e-16
+         ExecutionTime = 18.370233 s  ClockTime = 18 s
+         
+battery1 Diffusion Number mean: 0.091109957 max: 0.11731701
+Air      Courant Number mean: 1.7680863e-06 max: 0.00067211524
+         deltaT = 0.026399291
+         Time = 0.153064s
+         
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+battery1 DICPCG:  Solving for e, Initial residual = 0.07959151, Final residual = 1.5582337e-08, No Iterations 2
+Air      DILUPBiCGStab:  Solving for h, Initial residual = 3.8836915e-06, Final residual = 1.3794685e-13, No Iterations 1
+Air      GAMG:  Solving for p_rgh, Initial residual = 0.10630451, Final residual = 0.00063595261, No Iterations 2
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+Air      time step continuity errors : sum local = 3.1049144e-08, global = 3.2444725e-17, cumulative = 1.798707e-16
+Air      GAMG:  Solving for p_rgh, Initial residual = 0.00092267377, Final residual = 8.123744e-08, No Iterations 8
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+Air      time step continuity errors : sum local = 3.5955159e-12, global = 3.2393526e-17, cumulative = 2.1226423e-16
+         ExecutionTime = 19.213932 s  ClockTime = 19 s
+         
+battery1 Diffusion Number mean: 0.10913706 max: 0.14052946
+Air      Courant Number mean: 2.1457213e-06 max: 0.00080313907
+         deltaT = 0.031662172
+         Time = 0.184727s
+         
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+battery1 DICPCG:  Solving for e, Initial residual = 0.079055336, Final residual = 3.0681225e-08, No Iterations 2
+Air      DILUPBiCGStab:  Solving for h, Initial residual = 3.9034943e-06, Final residual = 1.9541131e-13, No Iterations 1
+Air      GAMG:  Solving for p_rgh, Initial residual = 0.10613447, Final residual = 0.00063302857, No Iterations 2
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+Air      time step continuity errors : sum local = 3.5931079e-08, global = -5.3119387e-17, cumulative = 1.5914484e-16
+Air      GAMG:  Solving for p_rgh, Initial residual = 0.00098610454, Final residual = 7.2530054e-08, No Iterations 9
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+Air      time step continuity errors : sum local = 3.6986689e-12, global = -5.306361e-17, cumulative = 1.0608123e-16
+         ExecutionTime = 19.987368 s  ClockTime = 20 s
+         
+battery1 Diffusion Number mean: 0.13089429 max: 0.16854498
+Air      Courant Number mean: 2.607101e-06 max: 0.00096013373
+         deltaT = 0.037896809
+         Time = 0.222623s
+         
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+battery1 DICPCG:  Solving for e, Initial residual = 0.078579149, Final residual = 5.9535681e-08, No Iterations 2
+Air      DILUPBiCGStab:  Solving for h, Initial residual = 4.111705e-06, Final residual = 2.892404e-13, No Iterations 1
+Air      GAMG:  Solving for p_rgh, Initial residual = 0.10441938, Final residual = 0.00062034465, No Iterations 2
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+Air      time step continuity errors : sum local = 4.0823795e-08, global = -8.3971391e-18, cumulative = 9.7684094e-17
+Air      GAMG:  Solving for p_rgh, Initial residual = 0.0010461507, Final residual = 8.0882865e-08, No Iterations 9
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+Air      time step continuity errors : sum local = 4.8424723e-12, global = -8.5635429e-18, cumulative = 8.9120551e-17
+         ExecutionTime = 20.780215 s  ClockTime = 21 s
+         
+battery1 Diffusion Number mean: 0.15666884 max: 0.20173337
+Air      Courant Number mean: 3.1597667e-06 max: 0.0011444457
+         deltaT = 0.04547617
+         Time = 0.2681s
+         
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+battery1 DICPCG:  Solving for e, Initial residual = 0.078496469, Final residual = 1.1623707e-07, No Iterations 2
+Air      DILUPBiCGStab:  Solving for h, Initial residual = 4.523604e-06, Final residual = 4.5547639e-13, No Iterations 1
+Air      GAMG:  Solving for p_rgh, Initial residual = 0.10508221, Final residual = 0.00062279392, No Iterations 2
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+Air      time step continuity errors : sum local = 4.7804137e-08, global = 1.9229109e-17, cumulative = 1.0834966e-16
+Air      GAMG:  Solving for p_rgh, Initial residual = 0.0011597362, Final residual = 4.0056799e-08, No Iterations 9
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+Air      time step continuity errors : sum local = 2.7519898e-12, global = 1.955004e-17, cumulative = 1.278997e-16
+         ExecutionTime = 21.556899 s  ClockTime = 22 s
+         
+battery1 Diffusion Number mean: 0.18800261 max: 0.24208005
+Air      Courant Number mean: 3.837017e-06 max: 0.0013662451
+         deltaT = 0.054368159
+         Time = 0.322468s
+         
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+battery1 DICPCG:  Solving for e, Initial residual = 0.078306825, Final residual = 2.2139402e-07, No Iterations 2
+Air      DILUPBiCGStab:  Solving for h, Initial residual = 5.1100526e-06, Final residual = 7.3161576e-13, No Iterations 1
+Air      GAMG:  Solving for p_rgh, Initial residual = 0.10281804, Final residual = 0.00060842083, No Iterations 2
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+Air      time step continuity errors : sum local = 5.4113894e-08, global = 7.4069249e-17, cumulative = 2.0196895e-16
+Air      GAMG:  Solving for p_rgh, Initial residual = 0.0012698168, Final residual = 7.5243527e-08, No Iterations 8
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+Air      time step continuity errors : sum local = 6.0344929e-12, global = 7.3445684e-17, cumulative = 2.7541463e-16
+         ExecutionTime = 22.312699 s  ClockTime = 22 s
+         
+battery1 Diffusion Number mean: 0.22476289 max: 0.28941414
+Air      Courant Number mean: 4.6378495e-06 max: 0.0016230483
+         deltaT = 0.064949881
+         Time = 0.387418s
+         
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+battery1 DICPCG:  Solving for e, Initial residual = 0.078267371, Final residual = 4.1733745e-07, No Iterations 2
+Air      DILUPBiCGStab:  Solving for h, Initial residual = 5.8749808e-06, Final residual = 1.1937859e-12, No Iterations 1
+Air      GAMG:  Solving for p_rgh, Initial residual = 0.10205054, Final residual = 0.00060236131, No Iterations 2
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+Air      time step continuity errors : sum local = 6.2159583e-08, global = 3.0777917e-17, cumulative = 3.0619255e-16
+Air      GAMG:  Solving for p_rgh, Initial residual = 0.001432953, Final residual = 8.3171481e-08, No Iterations 7
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+Air      time step continuity errors : sum local = 7.7570928e-12, global = 3.0695629e-17, cumulative = 3.3688818e-16
+         ExecutionTime = 23.054244 s  ClockTime = 23 s
+         
+battery1 Diffusion Number mean: 0.26850869 max: 0.34574306
+Air      Courant Number mean: 5.5960821e-06 max: 0.0019240699
+         deltaT = 0.077520826
+         Time = 0.464938s
+         
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+battery1 DICPCG:  Solving for e, Initial residual = 0.07834801, Final residual = 7.78028e-07, No Iterations 2
+Air      DILUPBiCGStab:  Solving for h, Initial residual = 6.8471638e-06, Final residual = 1.969e-12, No Iterations 1
+Air      GAMG:  Solving for p_rgh, Initial residual = 0.10136212, Final residual = 0.00059537895, No Iterations 2
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+Air      time step continuity errors : sum local = 7.1227835e-08, global = 3.1580689e-17, cumulative = 3.6846887e-16
+Air      GAMG:  Solving for p_rgh, Initial residual = 0.0016317523, Final residual = 7.832408e-08, No Iterations 8
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+Air      time step continuity errors : sum local = 8.5320629e-12, global = 3.1557835e-17, cumulative = 4.000267e-16
+         ExecutionTime = 24.131573 s  ClockTime = 24 s
+         
+battery1 Diffusion Number mean: 0.32047812 max: 0.41266108
+Air      Courant Number mean: 6.7385817e-06 max: 0.0022752732
+         deltaT = 0.092573414
+         Time = 0.557512s
+         
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+battery1 DICPCG:  Solving for e, Initial residual = 0.078634275, Final residual = 5.6804498e-09, No Iterations 3
+Air      DILUPBiCGStab:  Solving for h, Initial residual = 8.0560715e-06, Final residual = 3.2777775e-12, No Iterations 1
+Air      GAMG:  Solving for p_rgh, Initial residual = 0.10141762, Final residual = 0.00059198136, No Iterations 2
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+Air      time step continuity errors : sum local = 8.2211765e-08, global = 7.4159764e-17, cumulative = 4.7418647e-16
+Air      GAMG:  Solving for p_rgh, Initial residual = 0.0018883701, Final residual = 8.8222399e-08, No Iterations 7
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+Air      time step continuity errors : sum local = 1.1143113e-11, global = 7.431429e-17, cumulative = 5.4850076e-16
+         ExecutionTime = 25.212718 s  ClockTime = 25 s
+         
+battery1 Diffusion Number mean: 0.38270688 max: 0.49278944
+Air      Courant Number mean: 8.10854e-06 max: 0.0026870905
+         deltaT = 0.1110881
+         Time = 0.6686s
+         
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+battery1 DICPCG:  Solving for e, Initial residual = 0.079452751, Final residual = 1.439709e-08, No Iterations 3
+Air      DILUPBiCGStab:  Solving for h, Initial residual = 9.5841055e-06, Final residual = 5.5628389e-12, No Iterations 1
+Air      GAMG:  Solving for p_rgh, Initial residual = 0.10367591, Final residual = 0.00059981854, No Iterations 2
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+Air      time step continuity errors : sum local = 9.737538e-08, global = -9.3558948e-17, cumulative = 4.5494181e-16
+Air      GAMG:  Solving for p_rgh, Initial residual = 0.0022591658, Final residual = 5.4319455e-08, No Iterations 9
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+Air      time step continuity errors : sum local = 8.0722273e-12, global = -9.3798498e-17, cumulative = 3.6114331e-16
+         ExecutionTime = 26.271361 s  ClockTime = 26 s
+         
+battery1 Diffusion Number mean: 0.45924825 max: 0.59134733
+Air      Courant Number mean: 9.7910502e-06 max: 0.0031821722
+         deltaT = 0.13330572
+         Time = 0.801906s
+         
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+battery1 DICPCG:  Solving for e, Initial residual = 0.080410341, Final residual = 3.5625582e-08, No Iterations 3
+Air      DILUPBiCGStab:  Solving for h, Initial residual = 1.1441471e-05, Final residual = 9.4598293e-12, No Iterations 1
+Air      GAMG:  Solving for p_rgh, Initial residual = 0.10369554, Final residual = 0.00059466074, No Iterations 2
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+Air      time step continuity errors : sum local = 1.1247222e-07, global = 2.3488021e-17, cumulative = 3.8463133e-16
+Air      GAMG:  Solving for p_rgh, Initial residual = 0.0026537251, Final residual = 5.9578315e-08, No Iterations 8
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+Air      time step continuity errors : sum local = 1.0244421e-11, global = 2.3430424e-17, cumulative = 4.0806175e-16
+         ExecutionTime = 27.336654 s  ClockTime = 27 s
+         
+battery1 Diffusion Number mean: 0.5510979 max: 0.70961679
+Air      Courant Number mean: 1.1804113e-05 max: 0.00375887
+         deltaT = 0.15858783
+         Time = 0.960493s
+         
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+battery1 DICPCG:  Solving for e, Initial residual = 0.080863127, Final residual = 8.1735819e-08, No Iterations 3
+Air      DILUPBiCGStab:  Solving for h, Initial residual = 1.3564893e-05, Final residual = 1.5678987e-11, No Iterations 1
+Air      GAMG:  Solving for p_rgh, Initial residual = 0.09973658, Final residual = 0.00056813206, No Iterations 2
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+Air      time step continuity errors : sum local = 1.2337256e-07, global = -5.9982291e-17, cumulative = 3.4807946e-16
+Air      GAMG:  Solving for p_rgh, Initial residual = 0.0029813107, Final residual = 8.5122679e-08, No Iterations 8
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+Air      time step continuity errors : sum local = 1.6725712e-11, global = -5.9747307e-17, cumulative = 2.8833216e-16
+         ExecutionTime = 28.156402 s  ClockTime = 28 s
+         
+battery1 Diffusion Number mean: 0.65561647 max: 0.84419929
+Air      Courant Number mean: 1.408604e-05 max: 0.0043891128
+         deltaT = 0.18832305
+         Time = 1.14882s
+         
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+battery1 DICPCG:  Solving for e, Initial residual = 0.081325298, Final residual = 1.8197064e-07, No Iterations 3
+Air      DILUPBiCGStab:  Solving for h, Initial residual = 1.6074676e-05, Final residual = 2.5841082e-11, No Iterations 1
+Air      GAMG:  Solving for p_rgh, Initial residual = 0.099141813, Final residual = 0.00056078563, No Iterations 2
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+Air      time step continuity errors : sum local = 1.3990332e-07, global = 2.3822661e-17, cumulative = 3.1215482e-16
+Air      GAMG:  Solving for p_rgh, Initial residual = 0.0034682811, Final residual = 7.5946873e-08, No Iterations 9
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+Air      time step continuity errors : sum local = 1.7371706e-11, global = 2.3953416e-17, cumulative = 3.3610823e-16
+         ExecutionTime = 29.048798 s  ClockTime = 29 s
+         
+battery1 Diffusion Number mean: 0.77854456 max: 1.0024867
+Air      Courant Number mean: 1.6750396e-05 max: 0.005098766
+         deltaT = 0.22127959
+         Time = 1.3701s
+         
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+battery1 DICPCG:  Solving for e, Initial residual = 0.081164266, Final residual = 3.7182022e-07, No Iterations 3
+Air      DILUPBiCGStab:  Solving for h, Initial residual = 1.8854683e-05, Final residual = 4.120272e-11, No Iterations 1
+Air      GAMG:  Solving for p_rgh, Initial residual = 0.094580753, Final residual = 0.00053191361, No Iterations 2
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+Air      time step continuity errors : sum local = 1.498232e-07, global = 3.408501e-17, cumulative = 3.7019324e-16
+Air      GAMG:  Solving for p_rgh, Initial residual = 0.0038504289, Final residual = 7.9809069e-08, No Iterations 9
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+Air      time step continuity errors : sum local = 2.081558e-11, global = 3.4111537e-17, cumulative = 4.0430478e-16
+         ExecutionTime = 29.833341 s  ClockTime = 30 s
+         
+battery1 Diffusion Number mean: 0.91478985 max: 1.1779218
+Air      Courant Number mean: 1.9670074e-05 max: 0.0058393695
+         deltaT = 0.26151224
+         Time = 1.63161s
+         
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+battery1 DICPCG:  Solving for e, Initial residual = 0.081683258, Final residual = 7.635835e-07, No Iterations 3
+Air      DILUPBiCGStab:  Solving for h, Initial residual = 2.2238851e-05, Final residual = 6.6720942e-11, No Iterations 1
+Air      GAMG:  Solving for p_rgh, Initial residual = 0.097749765, Final residual = 0.00054510124, No Iterations 2
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+Air      time step continuity errors : sum local = 1.7560261e-07, global = 4.5594493e-17, cumulative = 4.4989927e-16
+Air      GAMG:  Solving for p_rgh, Initial residual = 0.0046724502, Final residual = 7.0294759e-08, No Iterations 9
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+Air      time step continuity errors : sum local = 2.0932235e-11, global = 4.5424447e-17, cumulative = 4.9532372e-16
+         ExecutionTime = 30.620694 s  ClockTime = 31 s
+         
+battery1 Diffusion Number mean: 1.0811153 max: 1.3920894
+Air      Courant Number mean: 2.3178357e-05 max: 0.0066970113
+         deltaT = 0.30994043
+         Time = 1.94155s
+         
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+battery1 DICPCG:  Solving for e, Initial residual = 0.0826218, Final residual = 3.8242903e-08, No Iterations 4
+Air      DILUPBiCGStab:  Solving for h, Initial residual = 2.6290955e-05, Final residual = 1.0872612e-10, No Iterations 1
+Air      GAMG:  Solving for p_rgh, Initial residual = 0.099694004, Final residual = 0.00055078642, No Iterations 2
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+Air      time step continuity errors : sum local = 2.0267517e-07, global = -3.268703e-17, cumulative = 4.6263669e-16
+Air      GAMG:  Solving for p_rgh, Initial residual = 0.0056173089, Final residual = 5.441649e-08, No Iterations 9
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+Air      time step continuity errors : sum local = 1.8315581e-11, global = -3.2976863e-17, cumulative = 4.2965983e-16
+         ExecutionTime = 31.379753 s  ClockTime = 31 s
+         
+battery1 Diffusion Number mean: 1.2813218 max: 1.6498838
+Air      Courant Number mean: 2.7316159e-05 max: 0.0076627384
+         deltaT = 0.36629324
+         Time = 2.30784s
+         
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+battery1 DICPCG:  Solving for e, Initial residual = 0.083491471, Final residual = 9.1421901e-08, No Iterations 4
+Air      DILUPBiCGStab:  Solving for h, Initial residual = 3.0969476e-05, Final residual = 1.7524415e-10, No Iterations 1
+Air      GAMG:  Solving for p_rgh, Initial residual = 0.099201917, Final residual = 0.00054281331, No Iterations 2
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+Air      time step continuity errors : sum local = 2.2603532e-07, global = 3.2660494e-17, cumulative = 4.6232032e-16
+Air      GAMG:  Solving for p_rgh, Initial residual = 0.0065778003, Final residual = 7.5487307e-08, No Iterations 9
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+Air      time step continuity errors : sum local = 2.8497948e-11, global = 3.2806799e-17, cumulative = 4.9512712e-16
+         ExecutionTime = 32.482034 s  ClockTime = 32 s
+         
+battery1 Diffusion Number mean: 1.5142894 max: 1.9498626
+Air      Courant Number mean: 3.200244e-05 max: 0.0086916367
+         deltaT = 0.42734211
+         Time = 2.73518s
+         
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+battery1 DICPCG:  Solving for e, Initial residual = 0.083601176, Final residual = 1.9420513e-07, No Iterations 4
+Air      DILUPBiCGStab:  Solving for h, Initial residual = 3.598183e-05, Final residual = 2.7112469e-10, No Iterations 1
+Air      GAMG:  Solving for p_rgh, Initial residual = 0.094435927, Final residual = 0.00051214404, No Iterations 2
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+Air      time step continuity errors : sum local = 2.3588226e-07, global = -8.4628766e-17, cumulative = 4.1049835e-16
+Air      GAMG:  Solving for p_rgh, Initial residual = 0.0072920281, Final residual = 7.2316145e-08, No Iterations 9
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+Air      time step continuity errors : sum local = 3.0487246e-11, global = -8.4700991e-17, cumulative = 3.2579736e-16
+         ExecutionTime = 33.592105 s  ClockTime = 34 s
+         
+battery1 Diffusion Number mean: 1.766671 max: 2.2748397
+Air      Courant Number mean: 3.6890603e-05 max: 0.0096724483
+         deltaT = 0.48432106
+         Time = 3.21951s
+         
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+battery1 DICPCG:  Solving for e, Initial residual = 0.082035139, Final residual = 3.3787452e-07, No Iterations 4
+Air      DILUPBiCGStab:  Solving for h, Initial residual = 4.0574293e-05, Final residual = 3.8403688e-10, No Iterations 1
+Air      GAMG:  Solving for p_rgh, Initial residual = 0.08282874, Final residual = 0.00044671978, No Iterations 2
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+Air      time step continuity errors : sum local = 2.1789481e-07, global = 3.8607253e-17, cumulative = 3.6440462e-16
+Air      GAMG:  Solving for p_rgh, Initial residual = 0.0072903148, Final residual = 6.7575335e-08, No Iterations 9
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+Air      time step continuity errors : sum local = 3.0725503e-11, global = 3.8828526e-17, cumulative = 4.0323314e-16
+         ExecutionTime = 34.765417 s  ClockTime = 35 s
+         
+battery1 Diffusion Number mean: 2.0022271 max: 2.5781517
+Air      Courant Number mean: 4.1169335e-05 max: 0.010399698
+         deltaT = 0.56504124
+         Time = 3.78455s
+         
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+battery1 DICPCG:  Solving for e, Initial residual = 0.083123783, Final residual = 6.853066e-07, No Iterations 4
+Air      DILUPBiCGStab:  Solving for h, Initial residual = 4.7059838e-05, Final residual = 5.9284451e-10, No Iterations 1
+Air      GAMG:  Solving for p_rgh, Initial residual = 0.096381469, Final residual = 0.00051214, No Iterations 2
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+Air      time step continuity errors : sum local = 2.8039645e-07, global = 6.2891642e-17, cumulative = 4.6612478e-16
+Air      GAMG:  Solving for p_rgh, Initial residual = 0.009803344, Final residual = 8.3577295e-08, No Iterations 9
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+Air      time step continuity errors : sum local = 4.1409671e-11, global = 6.2817601e-17, cumulative = 5.2894238e-16
+         ExecutionTime = 35.631777 s  ClockTime = 36 s
+         
+battery1 Diffusion Number mean: 2.3359316 max: 3.0078436
+Air      Courant Number mean: 4.705891e-05 max: 0.011423597
+         deltaT = 0.62154536
+         Time = 4.40609s
+         
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+battery1 DICPCG:  Solving for e, Initial residual = 0.080350332, Final residual = 9.7834652e-07, No Iterations 4
+Air      DILUPBiCGStab:  Solving for h, Initial residual = 5.1408604e-05, Final residual = 7.6675465e-10, No Iterations 1
+Air      GAMG:  Solving for p_rgh, Initial residual = 0.073005205, Final residual = 0.00038760042, No Iterations 2
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+Air      time step continuity errors : sum local = 2.1207767e-07, global = -1.0922505e-17, cumulative = 5.1801988e-16
+Air      GAMG:  Solving for p_rgh, Initial residual = 0.0083656924, Final residual = 9.9193836e-08, No Iterations 9
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+Air      time step continuity errors : sum local = 5.1129029e-11, global = -1.1127303e-17, cumulative = 5.0689258e-16
+         ExecutionTime = 36.506672 s  ClockTime = 36 s
+         
+battery1 Diffusion Number mean: 2.5695248 max: 3.308628
+Air      Courant Number mean: 5.0533275e-05 max: 0.011775626
+         deltaT = 0.69923853
+         Time = 5.10533s
+         
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+battery1 DICPCG:  Solving for e, Initial residual = 0.079859126, Final residual = 1.1372619e-07, No Iterations 5
+Air      DILUPBiCGStab:  Solving for h, Initial residual = 5.7403431e-05, Final residual = 1.0607375e-09, No Iterations 1
+Air      GAMG:  Solving for p_rgh, Initial residual = 0.083433294, Final residual = 0.00043690771, No Iterations 2
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+Air      time step continuity errors : sum local = 2.5473532e-07, global = -3.505056e-17, cumulative = 4.7184202e-16
+Air      GAMG:  Solving for p_rgh, Initial residual = 0.010619562, Final residual = 6.3221849e-08, No Iterations 9
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+Air      time step continuity errors : sum local = 3.4192136e-11, global = -3.4651902e-17, cumulative = 4.3719012e-16
+         ExecutionTime = 37.307015 s  ClockTime = 37 s
+         
+battery1 Diffusion Number mean: 2.8907154 max: 3.7222065
+Air      Courant Number mean: 5.5225569e-05 max: 0.012333747
+         deltaT = 0.81577828
+         Time = 5.92111s
+         
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+battery1 DICPCG:  Solving for e, Initial residual = 0.082296321, Final residual = 2.6831485e-07, No Iterations 5
+Air      DILUPBiCGStab:  Solving for h, Initial residual = 6.6418921e-05, Final residual = 1.6349928e-09, No Iterations 1
+Air      GAMG:  Solving for p_rgh, Initial residual = 0.099836482, Final residual = 0.00051444814, No Iterations 2
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+Air      time step continuity errors : sum local = 3.3320201e-07, global = -7.159356e-19, cumulative = 4.3647418e-16
+Air      GAMG:  Solving for p_rgh, Initial residual = 0.01460926, Final residual = 7.8133422e-08, No Iterations 10
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+Air      time step continuity errors : sum local = 4.5306446e-11, global = -8.503207e-20, cumulative = 4.3638915e-16
+         ExecutionTime = 38.07616 s  ClockTime = 38 s
+         
+battery1 Diffusion Number mean: 3.3725013 max: 4.3425743
+Air      Courant Number mean: 6.2099839e-05 max: 0.013266171
+         deltaT = 0.81577828
+         Time = 6.73689s
+         
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+battery1 DICPCG:  Solving for e, Initial residual = 0.074392059, Final residual = 2.3178744e-07, No Iterations 5
+Air      DILUPBiCGStab:  Solving for h, Initial residual = 6.5799064e-05, Final residual = 1.5899875e-09, No Iterations 1
+Air      GAMG:  Solving for p_rgh, Initial residual = 0.04002063, Final residual = 0.00020992157, No Iterations 2
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+Air      time step continuity errors : sum local = 1.1450425e-07, global = -4.6959639e-18, cumulative = 4.3169318e-16
+Air      GAMG:  Solving for p_rgh, Initial residual = 0.0069508898, Final residual = 5.9304851e-08, No Iterations 9
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+Air      time step continuity errors : sum local = 3.1237187e-11, global = -4.5633828e-18, cumulative = 4.271298e-16
+         ExecutionTime = 39.086115 s  ClockTime = 39 s
+         
+battery1 Diffusion Number mean: 3.3725013 max: 4.3425743
+Air      Courant Number mean: 5.9877049e-05 max: 0.012251785
+         deltaT = 0.81577828
+         Time = 7.55267s
+         
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+battery1 DICPCG:  Solving for e, Initial residual = 0.067968205, Final residual = 2.0327258e-07, No Iterations 5
+Air      DILUPBiCGStab:  Solving for h, Initial residual = 6.521791e-05, Final residual = 1.5513659e-09, No Iterations 1
+Air      GAMG:  Solving for p_rgh, Initial residual = 0.038752866, Final residual = 0.00020274836, No Iterations 2
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+Air      time step continuity errors : sum local = 1.0093659e-07, global = -3.0081749e-19, cumulative = 4.2682898e-16
+Air      GAMG:  Solving for p_rgh, Initial residual = 0.0067785955, Final residual = 6.4792627e-08, No Iterations 9
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+Air      time step continuity errors : sum local = 3.1337239e-11, global = -1.545205e-19, cumulative = 4.2667446e-16
+         ExecutionTime = 40.155525 s  ClockTime = 40 s
+         
+battery1 Diffusion Number mean: 3.3725013 max: 4.3425743
+Air      Courant Number mean: 5.7774893e-05 max: 0.011333171
+         deltaT = 0.81577828
+         Time = 8.36844s
+         
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+battery1 DICPCG:  Solving for e, Initial residual = 0.062612371, Final residual = 1.805753e-07, No Iterations 5
+Air      DILUPBiCGStab:  Solving for h, Initial residual = 6.4674966e-05, Final residual = 1.5178269e-09, No Iterations 1
+Air      GAMG:  Solving for p_rgh, Initial residual = 0.038525378, Final residual = 0.0002014501, No Iterations 2
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+Air      time step continuity errors : sum local = 9.1646745e-08, global = 3.7715739e-18, cumulative = 4.3044604e-16
+Air      GAMG:  Solving for p_rgh, Initial residual = 0.0067273636, Final residual = 6.1535081e-08, No Iterations 9
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+Air      time step continuity errors : sum local = 2.7124869e-11, global = 4.039476e-18, cumulative = 4.3448551e-16
+         ExecutionTime = 41.124529 s  ClockTime = 41 s
+         
+battery1 Diffusion Number mean: 3.3725013 max: 4.3425743
+Air      Courant Number mean: 5.5745447e-05 max: 0.01049973
+         deltaT = 0.81577828
+         Time = 9.18422s
+         
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+battery1 DICPCG:  Solving for e, Initial residual = 0.058067479, Final residual = 1.6203084e-07, No Iterations 5
+Air      DILUPBiCGStab:  Solving for h, Initial residual = 6.416627e-05, Final residual = 1.4881326e-09, No Iterations 1
+Air      GAMG:  Solving for p_rgh, Initial residual = 0.038159098, Final residual = 0.00019776646, No Iterations 2
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+Air      time step continuity errors : sum local = 8.233872e-08, global = 9.4028847e-18, cumulative = 4.438884e-16
+Air      GAMG:  Solving for p_rgh, Initial residual = 0.0066720235, Final residual = 4.9937739e-08, No Iterations 9
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+Air      time step continuity errors : sum local = 2.0367353e-11, global = 8.9631017e-18, cumulative = 4.528515e-16
+         ExecutionTime = 42.145361 s  ClockTime = 42 s
+         
+battery1 Diffusion Number mean: 3.3725013 max: 4.3425743
+Air      Courant Number mean: 5.377426e-05 max: 0.0097411522
+         deltaT = 0.81577828
+         Time = 10s
+         
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+battery1 DICPCG:  Solving for e, Initial residual = 0.054138424, Final residual = 1.4652418e-07, No Iterations 5
+Air      DILUPBiCGStab:  Solving for h, Initial residual = 6.368587e-05, Final residual = 1.4614822e-09, No Iterations 1
+Air      GAMG:  Solving for p_rgh, Initial residual = 0.038014245, Final residual = 0.00019464091, No Iterations 2
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+Air      time step continuity errors : sum local = 7.4163067e-08, global = -1.3059269e-17, cumulative = 4.3979223e-16
+Air      GAMG:  Solving for p_rgh, Initial residual = 0.0066433937, Final residual = 4.7886747e-08, No Iterations 9
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+Air      time step continuity errors : sum local = 1.7575916e-11, global = -1.3259502e-17, cumulative = 4.2653273e-16
+         ExecutionTime = 44.719174 s  ClockTime = 45 s
+         
+battery1 Diffusion Number mean: 3.3725013 max: 4.3425743
+Air      Courant Number mean: 5.1909548e-05 max: 0.009049942
+         deltaT = 0.90909091
+         Time = 10.9091s
+         
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+battery1 DICPCG:  Solving for e, Initial residual = 0.055936584, Final residual = 2.6462968e-07, No Iterations 5
+Air      DILUPBiCGStab:  Solving for h, Initial residual = 7.0463937e-05, Final residual = 1.9854342e-09, No Iterations 1
+Air      GAMG:  Solving for p_rgh, Initial residual = 0.081621777, Final residual = 0.00039843711, No Iterations 2
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+Air      time step continuity errors : sum local = 1.6545792e-07, global = -7.8677447e-17, cumulative = 3.4785528e-16
+Air      GAMG:  Solving for p_rgh, Initial residual = 0.013485941, Final residual = 7.6156858e-08, No Iterations 10
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+Air      time step continuity errors : sum local = 2.8854317e-11, global = -7.9021221e-17, cumulative = 2.6883406e-16
+         ExecutionTime = 45.71176 s  ClockTime = 46 s
+         
+battery1 Diffusion Number mean: 3.7582641 max: 4.8392987
+Air      Courant Number mean: 5.5531528e-05 max: 0.009313345
+         deltaT = 1.010101
+         Time = 11.9192s
+         
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+battery1 DICPCG:  Solving for e, Initial residual = 0.057506223, Final residual = 4.5763604e-07, No Iterations 5
+Air      DILUPBiCGStab:  Solving for h, Initial residual = 7.7700017e-05, Final residual = 2.6721221e-09, No Iterations 1
+Air      GAMG:  Solving for p_rgh, Initial residual = 0.082927397, Final residual = 0.0003980713, No Iterations 2
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+Air      time step continuity errors : sum local = 1.6848573e-07, global = 1.1982184e-17, cumulative = 2.8081624e-16
+Air      GAMG:  Solving for p_rgh, Initial residual = 0.015217764, Final residual = 6.1325906e-08, No Iterations 9
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+Air      time step continuity errors : sum local = 2.3753978e-11, global = 1.2136714e-17, cumulative = 2.9295296e-16
+         ExecutionTime = 46.580846 s  ClockTime = 47 s
+         
+battery1 Diffusion Number mean: 4.175849 max: 5.3769986
+Air      Courant Number mean: 5.8880574e-05 max: 0.0094862961
+         deltaT = 1.1544012
+         Time = 13.0736s
+         
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+battery1 DICPCG:  Solving for e, Initial residual = 0.060484523, Final residual = 9.116148e-07, No Iterations 5
+Air      DILUPBiCGStab:  Solving for h, Initial residual = 8.8087766e-05, Final residual = 3.9094198e-09, No Iterations 1
+Air      GAMG:  Solving for p_rgh, Initial residual = 0.09534083, Final residual = 0.00044713358, No Iterations 2
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+Air      time step continuity errors : sum local = 2.0074041e-07, global = 3.5807601e-17, cumulative = 3.2876056e-16
+Air      GAMG:  Solving for p_rgh, Initial residual = 0.019664085, Final residual = 7.3067577e-08, No Iterations 10
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+Air      time step continuity errors : sum local = 2.9296863e-11, global = 3.5782004e-17, cumulative = 3.6454256e-16
+         ExecutionTime = 47.447163 s  ClockTime = 48 s
+         
+battery1 Diffusion Number mean: 4.7723989 max: 6.1451412
+Air      Courant Number mean: 6.3691902e-05 max: 0.009843075
+         deltaT = 1.3852814
+         Time = 14.4589s
+         
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+battery1 DICPCG:  Solving for e, Initial residual = 0.066109382, Final residual = 3.1912069e-07, No Iterations 6
+Air      DILUPBiCGStab:  Solving for h, Initial residual = 0.00010479642, Final residual = 6.6055337e-09, No Iterations 1
+Air      GAMG:  Solving for p_rgh, Initial residual = 0.11470105, Final residual = 0.00052414749, No Iterations 2
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+Air      time step continuity errors : sum local = 2.6436082e-07, global = -6.132087e-17, cumulative = 3.0322169e-16
+Air      GAMG:  Solving for p_rgh, Initial residual = 0.027797467, Final residual = 5.1339154e-08, No Iterations 11
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+Air      time step continuity errors : sum local = 2.2845737e-11, global = -6.1099589e-17, cumulative = 2.421221e-16
+         ExecutionTime = 48.332001 s  ClockTime = 49 s
+         
+battery1 Diffusion Number mean: 5.7268787 max: 7.3741694
+Air      Courant Number mean: 7.1450111e-05 max: 0.010561782
+         deltaT = 1.3852814
+         Time = 15.8442s
+         
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+battery1 DICPCG:  Solving for e, Initial residual = 0.061027845, Final residual = 2.8312986e-07, No Iterations 6
+Air      DILUPBiCGStab:  Solving for h, Initial residual = 0.00010384745, Final residual = 6.4809617e-09, No Iterations 1
+Air      GAMG:  Solving for p_rgh, Initial residual = 0.055960286, Final residual = 0.00025912647, No Iterations 2
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+Air      time step continuity errors : sum local = 1.0387756e-07, global = -6.5053125e-17, cumulative = 1.7706898e-16
+Air      GAMG:  Solving for p_rgh, Initial residual = 0.015375259, Final residual = 7.5809253e-08, No Iterations 10
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+Air      time step continuity errors : sum local = 2.8584524e-11, global = -6.5405133e-17, cumulative = 1.1166385e-16
+         ExecutionTime = 49.21915 s  ClockTime = 49 s
+         
+battery1 Diffusion Number mean: 5.7268787 max: 7.3741694
+Air      Courant Number mean: 6.6875929e-05 max: 0.0094725115
+         deltaT = 1.3852814
+         Time = 17.2294s
+         
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+battery1 DICPCG:  Solving for e, Initial residual = 0.056626779, Final residual = 2.5412339e-07, No Iterations 6
+Air      DILUPBiCGStab:  Solving for h, Initial residual = 0.00010302014, Final residual = 6.3724185e-09, No Iterations 1
+Air      GAMG:  Solving for p_rgh, Initial residual = 0.053235968, Final residual = 0.00024442078, No Iterations 2
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+Air      time step continuity errors : sum local = 8.5476977e-08, global = -6.9017626e-17, cumulative = 4.2646219e-17
+Air      GAMG:  Solving for p_rgh, Initial residual = 0.014790282, Final residual = 7.4444322e-08, No Iterations 10
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+Air      time step continuity errors : sum local = 2.4376217e-11, global = -6.8983791e-17, cumulative = -2.6337571e-17
+         ExecutionTime = 50.048601 s  ClockTime = 50 s
+         
+battery1 Diffusion Number mean: 5.7268787 max: 7.3741694
+Air      Courant Number mean: 6.2656048e-05 max: 0.0085468352
+         deltaT = 1.3852814
+         Time = 18.6147s
+         
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+battery1 DICPCG:  Solving for e, Initial residual = 0.052758542, Final residual = 2.3008739e-07, No Iterations 6
+Air      DILUPBiCGStab:  Solving for h, Initial residual = 0.00010230418, Final residual = 6.2761876e-09, No Iterations 1
+Air      GAMG:  Solving for p_rgh, Initial residual = 0.053051956, Final residual = 0.00024010889, No Iterations 2
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+Air      time step continuity errors : sum local = 7.3479496e-08, global = 7.7467785e-17, cumulative = 5.1130214e-17
+Air      GAMG:  Solving for p_rgh, Initial residual = 0.014663568, Final residual = 6.8905017e-08, No Iterations 10
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+Air      time step continuity errors : sum local = 1.964002e-11, global = 7.7384584e-17, cumulative = 1.285148e-16
+         ExecutionTime = 50.850684 s  ClockTime = 51 s
+         
+battery1 Diffusion Number mean: 5.7268787 max: 7.3741694
+Air      Courant Number mean: 5.8760656e-05 max: 0.0077438032
+         deltaT = 1.3852814
+         Time = 20s
+         
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+battery1 DICPCG:  Solving for e, Initial residual = 0.049291923, Final residual = 2.0959246e-07, No Iterations 6
+Air      DILUPBiCGStab:  Solving for h, Initial residual = 0.00010166766, Final residual = 6.1899884e-09, No Iterations 1
+Air      GAMG:  Solving for p_rgh, Initial residual = 0.052868966, Final residual = 0.00023656528, No Iterations 2
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+Air      time step continuity errors : sum local = 6.3373461e-08, global = 4.4256853e-17, cumulative = 1.7277165e-16
+Air      GAMG:  Solving for p_rgh, Initial residual = 0.014563717, Final residual = 5.900487e-08, No Iterations 10
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+Air      time step continuity errors : sum local = 1.4778944e-11, global = 4.4175483e-17, cumulative = 2.1694713e-16
+         ExecutionTime = 53.180789 s  ClockTime = 54 s
+         
+battery1 Diffusion Number mean: 5.7268787 max: 7.3741694
+Air      Courant Number mean: 5.5165808e-05 max: 0.0070294939
+         deltaT = 1.4285714
+         Time = 21.4286s
+         
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+battery1 DICPCG:  Solving for e, Initial residual = 0.047541817, Final residual = 2.3300243e-07, No Iterations 6
+Air      DILUPBiCGStab:  Solving for h, Initial residual = 0.00010426126, Final residual = 6.697389e-09, No Iterations 1
+Air      GAMG:  Solving for p_rgh, Initial residual = 0.063749471, Final residual = 0.00027652936, No Iterations 2
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+Air      time step continuity errors : sum local = 6.825702e-08, global = 5.8143583e-17, cumulative = 2.7509072e-16
+Air      GAMG:  Solving for p_rgh, Initial residual = 0.017182701, Final residual = 6.5801583e-08, No Iterations 10
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+Air      time step continuity errors : sum local = 1.4967859e-11, global = 5.8182901e-17, cumulative = 3.3327362e-16
+         ExecutionTime = 54.357633 s  ClockTime = 55 s
+         
+battery1 Diffusion Number mean: 5.9058437 max: 7.6046122
+Air      Courant Number mean: 5.338011e-05 max: 0.0066829123
+         deltaT = 1.7142857
+         Time = 23.1429s
+         
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+battery1 DICPCG:  Solving for e, Initial residual = 0.052772914, Final residual = 6.4535357e-07, No Iterations 6
+Air      DILUPBiCGStab:  Solving for h, Initial residual = 0.00012444801, Final residual = 1.1370661e-08, No Iterations 1
+Air      GAMG:  Solving for p_rgh, Initial residual = 0.11450142, Final residual = 0.00047465737, No Iterations 2
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+Air      time step continuity errors : sum local = 1.3706103e-07, global = -1.845743e-17, cumulative = 3.1481619e-16
+Air      GAMG:  Solving for p_rgh, Initial residual = 0.03349023, Final residual = 4.5960641e-08, No Iterations 11
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+Air      time step continuity errors : sum local = 1.1611273e-11, global = -1.8151127e-17, cumulative = 2.9666506e-16
+         ExecutionTime = 55.519821 s  ClockTime = 56 s
+         
+battery1 Diffusion Number mean: 7.0870124 max: 9.1255347
+Air      Courant Number mean: 5.9472505e-05 max: 0.0073672857
+         deltaT = 1.7142857
+         Time = 24.8571s
+         
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+battery1 DICPCG:  Solving for e, Initial residual = 0.049164786, Final residual = 5.8460539e-07, No Iterations 6
+Air      DILUPBiCGStab:  Solving for h, Initial residual = 0.00012374164, Final residual = 1.1218155e-08, No Iterations 1
+Air      GAMG:  Solving for p_rgh, Initial residual = 0.063718064, Final residual = 0.00026626735, No Iterations 2
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+Air      time step continuity errors : sum local = 6.0069138e-08, global = -1.7953637e-17, cumulative = 2.7871142e-16
+Air      GAMG:  Solving for p_rgh, Initial residual = 0.020562823, Final residual = 8.8327866e-08, No Iterations 10
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+Air      time step continuity errors : sum local = 1.8291239e-11, global = -1.776254e-17, cumulative = 2.6094888e-16
+         ExecutionTime = 56.669747 s  ClockTime = 57 s
+         
+battery1 Diffusion Number mean: 7.0870124 max: 9.1255347
+Air      Courant Number mean: 5.5426736e-05 max: 0.0067984229
+         deltaT = 1.7142857
+         Time = 26.5714s
+         
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+battery1 DICPCG:  Solving for e, Initial residual = 0.04596577, Final residual = 5.3416179e-07, No Iterations 6
+Air      DILUPBiCGStab:  Solving for h, Initial residual = 0.00012312326, Final residual = 1.1086147e-08, No Iterations 1
+Air      GAMG:  Solving for p_rgh, Initial residual = 0.060907646, Final residual = 0.00025452409, No Iterations 2
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+Air      time step continuity errors : sum local = 4.87534e-08, global = 7.2194842e-18, cumulative = 2.6816837e-16
+Air      GAMG:  Solving for p_rgh, Initial residual = 0.019811136, Final residual = 8.8976753e-08, No Iterations 10
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+Air      time step continuity errors : sum local = 1.5685729e-11, global = 7.4892141e-18, cumulative = 2.7565758e-16
+         ExecutionTime = 57.741581 s  ClockTime = 58 s
+         
+battery1 Diffusion Number mean: 7.0870124 max: 9.1255347
+Air      Courant Number mean: 5.1832177e-05 max: 0.0062934712
+         deltaT = 1.7142857
+         Time = 28.2857s
+         
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+battery1 DICPCG:  Solving for e, Initial residual = 0.043121983, Final residual = 4.9140314e-07, No Iterations 6
+Air      DILUPBiCGStab:  Solving for h, Initial residual = 0.00012254747, Final residual = 1.0986807e-08, No Iterations 1
+Air      GAMG:  Solving for p_rgh, Initial residual = 0.060777957, Final residual = 0.00025144644, No Iterations 2
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+Air      time step continuity errors : sum local = 4.1077255e-08, global = 1.6283165e-17, cumulative = 2.9194075e-16
+Air      GAMG:  Solving for p_rgh, Initial residual = 0.019714513, Final residual = 7.8929452e-08, No Iterations 10
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+Air      time step continuity errors : sum local = 1.189745e-11, global = 1.6036299e-17, cumulative = 3.0797705e-16
+         ExecutionTime = 58.658187 s  ClockTime = 59 s
+         
+battery1 Diffusion Number mean: 7.0870124 max: 9.1255347
+Air      Courant Number mean: 4.861639e-05 max: 0.0058354478
+         deltaT = 1.7142857
+         Time = 30s
+         
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+battery1 DICPCG:  Solving for e, Initial residual = 0.040565155, Final residual = 4.5419629e-07, No Iterations 6
+Air      DILUPBiCGStab:  Solving for h, Initial residual = 0.00012201742, Final residual = 1.0906369e-08, No Iterations 1
+Air      GAMG:  Solving for p_rgh, Initial residual = 0.060823432, Final residual = 0.00024936684, No Iterations 2
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+Air      time step continuity errors : sum local = 3.4758184e-08, global = -2.7325439e-17, cumulative = 2.8065161e-16
+Air      GAMG:  Solving for p_rgh, Initial residual = 0.019656706, Final residual = 5.5836119e-08, No Iterations 10
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+Air      time step continuity errors : sum local = 7.2479928e-12, global = -2.7351952e-17, cumulative = 2.5329966e-16
+         ExecutionTime = 60.573853 s  ClockTime = 61 s
+         
+battery1 Diffusion Number mean: 7.0870124 max: 9.1255347
+Air      Courant Number mean: 4.5712945e-05 max: 0.0054194074
+         deltaT = 1.6666667
+         Time = 31.6667s
+         
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+battery1 DICPCG:  Solving for e, Initial residual = 0.037252059, Final residual = 3.5700499e-07, No Iterations 6
+Air      DILUPBiCGStab:  Solving for h, Initial residual = 0.00011815861, Final residual = 9.9782938e-09, No Iterations 1
+Air      GAMG:  Solving for p_rgh, Initial residual = 0.051280163, Final residual = 0.00021314905, No Iterations 2
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+Air      time step continuity errors : sum local = 2.4238299e-08, global = 3.0954381e-17, cumulative = 2.8425404e-16
+Air      GAMG:  Solving for p_rgh, Initial residual = 0.016897806, Final residual = 5.0686506e-08, No Iterations 10
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+Air      time step continuity errors : sum local = 5.4226999e-12, global = 3.0904095e-17, cumulative = 3.1515813e-16
+         ExecutionTime = 61.437772 s  ClockTime = 62 s
+         
+battery1 Diffusion Number mean: 6.8901509 max: 8.8720476
+Air      Courant Number mean: 4.1962079e-05 max: 0.004910532
+         deltaT = 1.6666667
+         Time = 33.3333s
+         
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+battery1 DICPCG:  Solving for e, Initial residual = 0.035260274, Final residual = 3.3340359e-07, No Iterations 6
+Air      DILUPBiCGStab:  Solving for h, Initial residual = 0.00011775683, Final residual = 9.9324264e-09, No Iterations 1
+Air      GAMG:  Solving for p_rgh, Initial residual = 0.059214628, Final residual = 0.00023937803, No Iterations 2
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+Air      time step continuity errors : sum local = 2.3675856e-08, global = 3.5536965e-17, cumulative = 3.506951e-16
+Air      GAMG:  Solving for p_rgh, Initial residual = 0.018594344, Final residual = 8.0007926e-08, No Iterations 10
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+Air      time step continuity errors : sum local = 7.3200134e-12, global = 3.5169408e-17, cumulative = 3.858645e-16
+         ExecutionTime = 62.29862 s  ClockTime = 63 s
+         
+battery1 Diffusion Number mean: 6.8901509 max: 8.8720476
+Air      Courant Number mean: 3.9699125e-05 max: 0.0045836969
+         deltaT = 1.6666667
+         Time = 35s
+         
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+battery1 DICPCG:  Solving for e, Initial residual = 0.033442732, Final residual = 3.1213523e-07, No Iterations 6
+Air      DILUPBiCGStab:  Solving for h, Initial residual = 0.00011738932, Final residual = 9.8913149e-09, No Iterations 1
+Air      GAMG:  Solving for p_rgh, Initial residual = 0.059688944, Final residual = 0.00023781975, No Iterations 2
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+Air      time step continuity errors : sum local = 2.0206552e-08, global = 3.9774848e-17, cumulative = 4.2563935e-16
+Air      GAMG:  Solving for p_rgh, Initial residual = 0.018630443, Final residual = 8.5111765e-08, No Iterations 10
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+Air      time step continuity errors : sum local = 6.672751e-12, global = 3.974102e-17, cumulative = 4.6538037e-16
+         ExecutionTime = 63.120873 s  ClockTime = 64 s
+         
+battery1 Diffusion Number mean: 6.8901509 max: 8.8720476
+Air      Courant Number mean: 3.7633222e-05 max: 0.0042850628
+         deltaT = 1.6666667
+         Time = 36.6667s
+         
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+battery1 DICPCG:  Solving for e, Initial residual = 0.031779049, Final residual = 2.9295705e-07, No Iterations 6
+Air      DILUPBiCGStab:  Solving for h, Initial residual = 0.00011704988, Final residual = 9.8551499e-09, No Iterations 1
+Air      GAMG:  Solving for p_rgh, Initial residual = 0.059848071, Final residual = 0.00023572333, No Iterations 2
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+Air      time step continuity errors : sum local = 1.719826e-08, global = 3.1097931e-17, cumulative = 4.964783e-16
+Air      GAMG:  Solving for p_rgh, Initial residual = 0.018590728, Final residual = 8.7049636e-08, No Iterations 10
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+Air      time step continuity errors : sum local = 5.9103384e-12, global = 3.0789804e-17, cumulative = 5.2726811e-16
+         ExecutionTime = 63.896598 s  ClockTime = 65 s
+         
+battery1 Diffusion Number mean: 6.8901509 max: 8.8720476
+Air      Courant Number mean: 3.5758216e-05 max: 0.004012117
+         deltaT = 1.6666667
+         Time = 38.3333s
+         
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+battery1 DICPCG:  Solving for e, Initial residual = 0.03025164, Final residual = 2.7566341e-07, No Iterations 6
+Air      DILUPBiCGStab:  Solving for h, Initial residual = 0.00011672323, Final residual = 9.8225656e-09, No Iterations 1
+Air      GAMG:  Solving for p_rgh, Initial residual = 0.059883156, Final residual = 0.00023442477, No Iterations 2
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+Air      time step continuity errors : sum local = 1.4681682e-08, global = 1.7540359e-17, cumulative = 5.4480847e-16
+Air      GAMG:  Solving for p_rgh, Initial residual = 0.018518116, Final residual = 8.3983901e-08, No Iterations 10
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+Air      time step continuity errors : sum local = 4.9073767e-12, global = 1.737761e-17, cumulative = 5.6218608e-16
+         ExecutionTime = 64.675313 s  ClockTime = 65 s
+         
+battery1 Diffusion Number mean: 6.8901509 max: 8.8720476
+Air      Courant Number mean: 3.4057942e-05 max: 0.0037623129
+         deltaT = 1.6666667
+         Time = 40s
+         
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+battery1 DICPCG:  Solving for e, Initial residual = 0.028847649, Final residual = 2.6001081e-07, No Iterations 6
+Air      DILUPBiCGStab:  Solving for h, Initial residual = 0.00011640986, Final residual = 9.7921799e-09, No Iterations 1
+Air      GAMG:  Solving for p_rgh, Initial residual = 0.060077454, Final residual = 0.0002338274, No Iterations 2
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+Air      time step continuity errors : sum local = 1.2567043e-08, global = -3.1134503e-17, cumulative = 5.3105157e-16
+Air      GAMG:  Solving for p_rgh, Initial residual = 0.018487244, Final residual = 7.3304543e-08, No Iterations 10
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+Air      time step continuity errors : sum local = 3.6822195e-12, global = -3.1502061e-17, cumulative = 4.9954951e-16
+         ExecutionTime = 66.497958 s  ClockTime = 68 s
+         
+battery1 Diffusion Number mean: 6.8901509 max: 8.8720476
+Air      Courant Number mean: 3.2504364e-05 max: 0.0035331699
+         deltaT = 1.6666667
+         Time = 41.6667s
+         
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+battery1 DICPCG:  Solving for e, Initial residual = 0.027552365, Final residual = 2.4574423e-07, No Iterations 6
+Air      DILUPBiCGStab:  Solving for h, Initial residual = 0.00011610811, Final residual = 9.7651473e-09, No Iterations 1
+Air      GAMG:  Solving for p_rgh, Initial residual = 0.060264759, Final residual = 0.00023294315, No Iterations 2
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+Air      time step continuity errors : sum local = 1.0739103e-08, global = 3.0789804e-17, cumulative = 5.3033931e-16
+Air      GAMG:  Solving for p_rgh, Initial residual = 0.018482538, Final residual = 7.3728165e-08, No Iterations 10
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+Air      time step continuity errors : sum local = 3.1739635e-12, global = 3.0737688e-17, cumulative = 5.61077e-16
+         ExecutionTime = 67.362951 s  ClockTime = 68 s
+         
+battery1 Diffusion Number mean: 6.8901509 max: 8.8720476
+Air      Courant Number mean: 3.1081578e-05 max: 0.0033228491
+         deltaT = 1.6666667
+         Time = 43.3333s
+         
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+battery1 DICPCG:  Solving for e, Initial residual = 0.026351696, Final residual = 2.3267471e-07, No Iterations 6
+Air      DILUPBiCGStab:  Solving for h, Initial residual = 0.000115818, Final residual = 9.7403438e-09, No Iterations 1
+Air      GAMG:  Solving for p_rgh, Initial residual = 0.060494458, Final residual = 0.00023117574, No Iterations 2
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+Air      time step continuity errors : sum local = 9.13863e-09, global = 3.0866607e-17, cumulative = 5.9194361e-16
+Air      GAMG:  Solving for p_rgh, Initial residual = 0.018481744, Final residual = 5.9762416e-08, No Iterations 10
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+Air      time step continuity errors : sum local = 2.1927373e-12, global = 3.1144561e-17, cumulative = 6.2308817e-16
+         ExecutionTime = 68.228247 s  ClockTime = 69 s
+         
+battery1 Diffusion Number mean: 6.8901509 max: 8.8720476
+Air      Courant Number mean: 2.9778411e-05 max: 0.0031293892
+         deltaT = 1.6666667
+         Time = 45s
+         
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+battery1 DICPCG:  Solving for e, Initial residual = 0.025234338, Final residual = 2.2063019e-07, No Iterations 6
+Air      DILUPBiCGStab:  Solving for h, Initial residual = 0.00011553799, Final residual = 9.716742e-09, No Iterations 1
+Air      GAMG:  Solving for p_rgh, Initial residual = 0.060802432, Final residual = 0.00023221238, No Iterations 2
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+Air      time step continuity errors : sum local = 7.8659873e-09, global = 1.8034093e-17, cumulative = 6.4112226e-16
+Air      GAMG:  Solving for p_rgh, Initial residual = 0.018516458, Final residual = 6.1706825e-08, No Iterations 10
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+Air      time step continuity errors : sum local = 1.9402512e-12, global = 1.7287092e-17, cumulative = 6.5840936e-16
+         ExecutionTime = 69.046634 s  ClockTime = 70 s
+         
+battery1 Diffusion Number mean: 6.8901509 max: 8.8720476
+Air      Courant Number mean: 2.8593948e-05 max: 0.0029511077
+         deltaT = 1.6666667
+         Time = 46.6667s
+         
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+battery1 DICPCG:  Solving for e, Initial residual = 0.024191165, Final residual = 2.0949978e-07, No Iterations 6
+Air      DILUPBiCGStab:  Solving for h, Initial residual = 0.0001152671, Final residual = 9.6939891e-09, No Iterations 1
+Air      GAMG:  Solving for p_rgh, Initial residual = 0.061252931, Final residual = 0.00023187617, No Iterations 2
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+Air      time step continuity errors : sum local = 6.7223663e-09, global = 3.1329254e-17, cumulative = 6.8973861e-16
+Air      GAMG:  Solving for p_rgh, Initial residual = 0.018585287, Final residual = 6.990721e-08, No Iterations 9
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+Air      time step continuity errors : sum local = 1.9113084e-12, global = 3.0971754e-17, cumulative = 7.2071037e-16
+         ExecutionTime = 69.842168 s  ClockTime = 71 s
+         
+battery1 Diffusion Number mean: 6.8901509 max: 8.8720476
+Air      Courant Number mean: 2.7506468e-05 max: 0.0027872996
+         deltaT = 1.6666667
+         Time = 48.3333s
+         
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+battery1 DICPCG:  Solving for e, Initial residual = 0.023215924, Final residual = 1.9921163e-07, No Iterations 6
+Air      DILUPBiCGStab:  Solving for h, Initial residual = 0.00011500357, Final residual = 9.6716588e-09, No Iterations 1
+Air      GAMG:  Solving for p_rgh, Initial residual = 0.061450883, Final residual = 0.00023117091, No Iterations 2
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+Air      time step continuity errors : sum local = 5.7309901e-09, global = 1.7531216e-17, cumulative = 7.3824158e-16
+Air      GAMG:  Solving for p_rgh, Initial residual = 0.018619879, Final residual = 9.2740655e-08, No Iterations 9
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+Air      time step continuity errors : sum local = 2.1591223e-12, global = 1.7410526e-17, cumulative = 7.5565211e-16
+         ExecutionTime = 70.620513 s  ClockTime = 72 s
+         
+battery1 Diffusion Number mean: 6.8901509 max: 8.8720476
+Air      Courant Number mean: 2.6506919e-05 max: 0.0026361155
+         deltaT = 1.6666667
+         Time = 50s
+         
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+battery1 DICPCG:  Solving for e, Initial residual = 0.02230319, Final residual = 1.8968718e-07, No Iterations 6
+Air      DILUPBiCGStab:  Solving for h, Initial residual = 0.00011474675, Final residual = 9.6495647e-09, No Iterations 1
+Air      GAMG:  Solving for p_rgh, Initial residual = 0.061904001, Final residual = 0.0002332413, No Iterations 2
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+Air      time step continuity errors : sum local = 4.9398989e-09, global = -3.142343e-17, cumulative = 7.2422868e-16
+Air      GAMG:  Solving for p_rgh, Initial residual = 0.018711161, Final residual = 5.8171963e-08, No Iterations 9
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+Air      time step continuity errors : sum local = 1.145799e-12, global = -3.1298167e-17, cumulative = 6.9293051e-16
+         ExecutionTime = 72.420075 s  ClockTime = 74 s
+         
+battery1 Diffusion Number mean: 6.8901509 max: 8.8720476
+Air      Courant Number mean: 2.5591525e-05 max: 0.0024955657
+         deltaT = 1.6666667
+         Time = 51.6667s
+         
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+battery1 DICPCG:  Solving for e, Initial residual = 0.021445293, Final residual = 1.8080816e-07, No Iterations 6
+Air      DILUPBiCGStab:  Solving for h, Initial residual = 0.00011449798, Final residual = 9.6276384e-09, No Iterations 1
+Air      GAMG:  Solving for p_rgh, Initial residual = 0.062361153, Final residual = 0.00023623443, No Iterations 2
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+Air      time step continuity errors : sum local = 4.2704252e-09, global = 3.1111646e-17, cumulative = 7.2404216e-16
+Air      GAMG:  Solving for p_rgh, Initial residual = 0.018816219, Final residual = 6.4429781e-08, No Iterations 9
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+Air      time step continuity errors : sum local = 1.0811019e-12, global = 3.0976326e-17, cumulative = 7.5501848e-16
+         ExecutionTime = 73.284726 s  ClockTime = 75 s
+         
+battery1 Diffusion Number mean: 6.8901509 max: 8.8720476
+Air      Courant Number mean: 2.4754381e-05 max: 0.0023668462
+         deltaT = 1.6666667
+         Time = 53.3333s
+         
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+battery1 DICPCG:  Solving for e, Initial residual = 0.020637187, Final residual = 1.7252444e-07, No Iterations 6
+Air      DILUPBiCGStab:  Solving for h, Initial residual = 0.00011425531, Final residual = 9.6057506e-09, No Iterations 1
+Air      GAMG:  Solving for p_rgh, Initial residual = 0.063065946, Final residual = 0.00023881658, No Iterations 2
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+Air      time step continuity errors : sum local = 3.6796558e-09, global = 3.0904094e-17, cumulative = 7.8592258e-16
+Air      GAMG:  Solving for p_rgh, Initial residual = 0.018983295, Final residual = 5.469736e-08, No Iterations 9
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+Air      time step continuity errors : sum local = 7.7964332e-13, global = 3.1274395e-17, cumulative = 8.1719697e-16
+         ExecutionTime = 74.275767 s  ClockTime = 76 s
+         
+battery1 Diffusion Number mean: 6.8901509 max: 8.8720476
+Air      Courant Number mean: 2.3980275e-05 max: 0.0022503907
+         deltaT = 1.6666667
+         Time = 55s
+         
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+battery1 DICPCG:  Solving for e, Initial residual = 0.019874965, Final residual = 1.6479188e-07, No Iterations 6
+Air      DILUPBiCGStab:  Solving for h, Initial residual = 0.00011401791, Final residual = 9.5837425e-09, No Iterations 1
+Air      GAMG:  Solving for p_rgh, Initial residual = 0.063636957, Final residual = 0.00024333278, No Iterations 2
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+Air      time step continuity errors : sum local = 3.1887401e-09, global = 1.7837514e-17, cumulative = 8.3503448e-16
+Air      GAMG:  Solving for p_rgh, Initial residual = 0.019130584, Final residual = 7.8847331e-08, No Iterations 10
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+Air      time step continuity errors : sum local = 9.6126112e-13, global = 1.7612591e-17, cumulative = 8.5264708e-16
+         ExecutionTime = 75.497297 s  ClockTime = 77 s
+         
+battery1 Diffusion Number mean: 6.8901509 max: 8.8720476
+Air      Courant Number mean: 2.3265602e-05 max: 0.0021442697
+         deltaT = 1.6666667
+         Time = 56.6667s
+         
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+battery1 DICPCG:  Solving for e, Initial residual = 0.01915568, Final residual = 9.5637914e-07, No Iterations 5
+Air      DILUPBiCGStab:  Solving for h, Initial residual = 0.00011378546, Final residual = 9.5614941e-09, No Iterations 1
+Air      GAMG:  Solving for p_rgh, Initial residual = 0.064265489, Final residual = 0.0002458246, No Iterations 2
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+Air      time step continuity errors : sum local = 2.7360081e-09, global = 3.0809919e-17, cumulative = 8.8345699e-16
+Air      GAMG:  Solving for p_rgh, Initial residual = 0.019303186, Final residual = 9.170007e-08, No Iterations 10
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+Air      time step continuity errors : sum local = 9.4506154e-13, global = 3.0728545e-17, cumulative = 9.1418554e-16
+         ExecutionTime = 76.62409 s  ClockTime = 78 s
+         
+battery1 Diffusion Number mean: 6.8901509 max: 8.8720476
+Air      Courant Number mean: 2.2604352e-05 max: 0.0020452143
+         deltaT = 1.6666667
+         Time = 58.3333s
+         
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+battery1 DICPCG:  Solving for e, Initial residual = 0.018475967, Final residual = 9.12954e-07, No Iterations 5
+Air      DILUPBiCGStab:  Solving for h, Initial residual = 0.00011355764, Final residual = 9.5389345e-09, No Iterations 1
+Air      GAMG:  Solving for p_rgh, Initial residual = 0.065111132, Final residual = 0.00025105961, No Iterations 2
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+Air      time step continuity errors : sum local = 2.3682576e-09, global = 1.7666536e-17, cumulative = 9.3185208e-16
+Air      GAMG:  Solving for p_rgh, Initial residual = 0.019558857, Final residual = 8.4204128e-08, No Iterations 10
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+Air      time step continuity errors : sum local = 7.288502e-13, global = 1.7439784e-17, cumulative = 9.4929186e-16
+         ExecutionTime = 77.799949 s  ClockTime = 79 s
+         
+battery1 Diffusion Number mean: 6.8901509 max: 8.8720476
+Air      Courant Number mean: 2.1990906e-05 max: 0.0019528262
+         deltaT = 1.6666667
+         Time = 60s
+         
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+battery1 DICPCG:  Solving for e, Initial residual = 0.017832535, Final residual = 8.7214268e-07, No Iterations 5
+Air      DILUPBiCGStab:  Solving for h, Initial residual = 0.00011333413, Final residual = 9.5162521e-09, No Iterations 1
+Air      GAMG:  Solving for p_rgh, Initial residual = 0.065906416, Final residual = 0.000259394, No Iterations 2
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+Air      time step continuity errors : sum local = 2.0698111e-09, global = -3.147646e-17, cumulative = 9.178154e-16
+Air      GAMG:  Solving for p_rgh, Initial residual = 0.019865462, Final residual = 5.5587211e-08, No Iterations 10
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+Air      time step continuity errors : sum local = 4.1363012e-13, global = -3.1169248e-17, cumulative = 8.8664615e-16
+         ExecutionTime = 80.429887 s  ClockTime = 82 s
+         
+battery1 Diffusion Number mean: 6.8901509 max: 8.8720476
+Air      Courant Number mean: 2.1418844e-05 max: 0.001866513
+         deltaT = 1.6666667
+         Time = 61.6667s
+         
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+battery1 DICPCG:  Solving for e, Initial residual = 0.017222368, Final residual = 8.3368807e-07, No Iterations 5
+Air      DILUPBiCGStab:  Solving for h, Initial residual = 0.00011311529, Final residual = 9.4935479e-09, No Iterations 1
+Air      GAMG:  Solving for p_rgh, Initial residual = 0.066707498, Final residual = 0.00026464782, No Iterations 2
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+Air      time step continuity errors : sum local = 1.7821025e-09, global = 3.0878493e-17, cumulative = 9.1752464e-16
+Air      GAMG:  Solving for p_rgh, Initial residual = 0.020196503, Final residual = 4.1471564e-08, No Iterations 11
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+Air      time step continuity errors : sum local = 2.5549329e-13, global = 3.0852892e-17, cumulative = 9.4837754e-16
+         ExecutionTime = 81.648668 s  ClockTime = 83 s
+         
+battery1 Diffusion Number mean: 6.8901509 max: 8.8720476
+Air      Courant Number mean: 2.0882991e-05 max: 0.0017858467
+         deltaT = 1.6666667
+         Time = 63.3333s
+         
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+battery1 DICPCG:  Solving for e, Initial residual = 0.016642568, Final residual = 7.9741424e-07, No Iterations 5
+Air      DILUPBiCGStab:  Solving for h, Initial residual = 0.00011290096, Final residual = 9.4707944e-09, No Iterations 1
+Air      GAMG:  Solving for p_rgh, Initial residual = 0.067533375, Final residual = 0.00026931303, No Iterations 2
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+Air      time step continuity errors : sum local = 1.5269319e-09, global = 3.0661799e-17, cumulative = 9.7903934e-16
+Air      GAMG:  Solving for p_rgh, Initial residual = 0.020553491, Final residual = 6.2145976e-08, No Iterations 11
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+Air      time step continuity errors : sum local = 3.2885953e-13, global = 3.108513e-17, cumulative = 1.0101245e-15
+         ExecutionTime = 82.633804 s  ClockTime = 84 s
+         
+battery1 Diffusion Number mean: 6.8901509 max: 8.8720476
+Air      Courant Number mean: 2.0381444e-05 max: 0.0017103521
+         deltaT = 1.6666667
+         Time = 65s
+         
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+battery1 DICPCG:  Solving for e, Initial residual = 0.016090831, Final residual = 7.6304118e-07, No Iterations 5
+Air      DILUPBiCGStab:  Solving for h, Initial residual = 0.00011269116, Final residual = 9.4481923e-09, No Iterations 1
+Air      GAMG:  Solving for p_rgh, Initial residual = 0.06831338, Final residual = 0.00027434982, No Iterations 2
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+Air      time step continuity errors : sum local = 1.3068239e-09, global = 1.7238633e-17, cumulative = 1.0273631e-15
+Air      GAMG:  Solving for p_rgh, Initial residual = 0.020901135, Final residual = 6.9907617e-08, No Iterations 11
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+Air      time step continuity errors : sum local = 3.0808187e-13, global = 1.7357495e-17, cumulative = 1.0447206e-15
+         ExecutionTime = 83.516139 s  ClockTime = 85 s
+         
+battery1 Diffusion Number mean: 6.8901509 max: 8.8720476
+Air      Courant Number mean: 1.9910109e-05 max: 0.0016395972
+         deltaT = 1.6666667
+         Time = 66.6667s
+         
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+battery1 DICPCG:  Solving for e, Initial residual = 0.015565144, Final residual = 7.3047015e-07, No Iterations 5
+Air      DILUPBiCGStab:  Solving for h, Initial residual = 0.0001124862, Final residual = 9.4270302e-09, No Iterations 1
+Air      GAMG:  Solving for p_rgh, Initial residual = 0.069067235, Final residual = 0.00028160285, No Iterations 2
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+Air      time step continuity errors : sum local = 1.1243737e-09, global = 3.1016556e-17, cumulative = 1.0757372e-15
+Air      GAMG:  Solving for p_rgh, Initial residual = 0.021256147, Final residual = 8.8616183e-08, No Iterations 10
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+Air      time step continuity errors : sum local = 3.2660574e-13, global = 3.0961697e-17, cumulative = 1.1066988e-15
+         ExecutionTime = 84.341898 s  ClockTime = 86 s
+         
+battery1 Diffusion Number mean: 6.8901509 max: 8.8720476
+Air      Courant Number mean: 1.9466376e-05 max: 0.0015731757
+         deltaT = 1.6666667
+         Time = 68.3333s
+         
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+battery1 DICPCG:  Solving for e, Initial residual = 0.015063809, Final residual = 6.9959352e-07, No Iterations 5
+Air      DILUPBiCGStab:  Solving for h, Initial residual = 0.00011228544, Final residual = 9.4082359e-09, No Iterations 1
+Air      GAMG:  Solving for p_rgh, Initial residual = 0.06989433, Final residual = 0.00029066852, No Iterations 2
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+Air      time step continuity errors : sum local = 9.7083547e-10, global = 6.6145734e-17, cumulative = 1.1728446e-15
+Air      GAMG:  Solving for p_rgh, Initial residual = 0.021644904, Final residual = 6.4189984e-08, No Iterations 9
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+Air      time step continuity errors : sum local = 1.9638434e-13, global = 6.621888e-17, cumulative = 1.2390635e-15
+         ExecutionTime = 85.075358 s  ClockTime = 87 s
+         
+battery1 Diffusion Number mean: 6.8901509 max: 8.8720476
+Air      Courant Number mean: 1.9048598e-05 max: 0.0015107663
+         deltaT = 1.6666667
+         Time = 70s
+         
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+battery1 DICPCG:  Solving for e, Initial residual = 0.014585155, Final residual = 6.7030108e-07, No Iterations 5
+Air      DILUPBiCGStab:  Solving for h, Initial residual = 0.00011208852, Final residual = 9.3892476e-09, No Iterations 1
+Air      GAMG:  Solving for p_rgh, Initial residual = 0.070846304, Final residual = 0.00030073953, No Iterations 2
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+Air      time step continuity errors : sum local = 8.3834136e-10, global = -2.1231479e-17, cumulative = 1.217832e-15
+Air      GAMG:  Solving for p_rgh, Initial residual = 0.022094458, Final residual = 9.2686629e-08, No Iterations 10
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+Air      time step continuity errors : sum local = 2.3794951e-13, global = -2.1172962e-17, cumulative = 1.196659e-15
+         ExecutionTime = 86.85864 s  ClockTime = 89 s
+         
+battery1 Diffusion Number mean: 6.8901509 max: 8.8720476
+Air      Courant Number mean: 1.8655516e-05 max: 0.0014520313
+         deltaT = 1.6666667
+         Time = 71.6667s
+         
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+battery1 DICPCG:  Solving for e, Initial residual = 0.014127607, Final residual = 6.4244469e-07, No Iterations 5
+Air      DILUPBiCGStab:  Solving for h, Initial residual = 0.00011189555, Final residual = 9.3698387e-09, No Iterations 1
+Air      GAMG:  Solving for p_rgh, Initial residual = 0.071650519, Final residual = 0.00031266353, No Iterations 2
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+Air      time step continuity errors : sum local = 7.2551415e-10, global = 3.1001927e-17, cumulative = 1.2276609e-15
+Air      GAMG:  Solving for p_rgh, Initial residual = 0.022537374, Final residual = 6.0204179e-08, No Iterations 11
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+Air      time step continuity errors : sum local = 1.2868182e-13, global = 3.0599625e-17, cumulative = 1.2582606e-15
+         ExecutionTime = 87.732223 s  ClockTime = 90 s
+         
+battery1 Diffusion Number mean: 6.8901509 max: 8.8720476
+Air      Courant Number mean: 1.8283399e-05 max: 0.0013966893
+         deltaT = 1.6666667
+         Time = 73.3333s
+         
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+battery1 DICPCG:  Solving for e, Initial residual = 0.013689692, Final residual = 6.1594498e-07, No Iterations 5
+Air      DILUPBiCGStab:  Solving for h, Initial residual = 0.00011170629, Final residual = 9.3500246e-09, No Iterations 1
+Air      GAMG:  Solving for p_rgh, Initial residual = 0.072500895, Final residual = 0.00032347939, No Iterations 2
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+Air      time step continuity errors : sum local = 6.2323539e-10, global = 4.8635547e-17, cumulative = 1.3068961e-15
+Air      GAMG:  Solving for p_rgh, Initial residual = 0.023025141, Final residual = 8.0687059e-08, No Iterations 11
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+Air      time step continuity errors : sum local = 1.4320506e-13, global = 4.8198501e-17, cumulative = 1.3550946e-15
+         ExecutionTime = 88.615414 s  ClockTime = 90 s
+         
+battery1 Diffusion Number mean: 6.8901509 max: 8.8720476
+Air      Courant Number mean: 1.7930839e-05 max: 0.0013444999
+         deltaT = 1.6666667
+         Time = 75s
+         
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+battery1 DICPCG:  Solving for e, Initial residual = 0.013269988, Final residual = 5.908669e-07, No Iterations 5
+Air      DILUPBiCGStab:  Solving for h, Initial residual = 0.00011152074, Final residual = 9.3300681e-09, No Iterations 1
+Air      GAMG:  Solving for p_rgh, Initial residual = 0.07339474, Final residual = 0.00034133518, No Iterations 2
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+Air      time step continuity errors : sum local = 5.4460295e-10, global = 6.6490434e-17, cumulative = 1.4215851e-15
+Air      GAMG:  Solving for p_rgh, Initial residual = 0.023573663, Final residual = 6.815526e-08, No Iterations 11
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+Air      time step continuity errors : sum local = 1.0037105e-13, global = 6.6127448e-17, cumulative = 1.4877125e-15
+         ExecutionTime = 89.449862 s  ClockTime = 91 s
+         
+battery1 Diffusion Number mean: 6.8901509 max: 8.8720476
+Air      Courant Number mean: 1.7596732e-05 max: 0.0012952221
+         deltaT = 1.6666667
+         Time = 76.6667s
+         
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+battery1 DICPCG:  Solving for e, Initial residual = 0.012867261, Final residual = 5.6700958e-07, No Iterations 5
+Air      DILUPBiCGStab:  Solving for h, Initial residual = 0.00011133918, Final residual = 9.3099434e-09, No Iterations 1
+Air      GAMG:  Solving for p_rgh, Initial residual = 0.074276563, Final residual = 0.00035694819, No Iterations 2
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+Air      time step continuity errors : sum local = 4.7031402e-10, global = 3.0885808e-17, cumulative = 1.5185983e-15
+Air      GAMG:  Solving for p_rgh, Initial residual = 0.024158262, Final residual = 9.4127955e-08, No Iterations 10
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+Air      time step continuity errors : sum local = 1.1381645e-13, global = 3.0982726e-17, cumulative = 1.549581e-15
+         ExecutionTime = 90.243825 s  ClockTime = 92 s
+         
+battery1 Diffusion Number mean: 6.8901509 max: 8.8720476
+Air      Courant Number mean: 1.7279442e-05 max: 0.0012486311
+         deltaT = 1.6666667
+         Time = 78.3333s
+         
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+battery1 DICPCG:  Solving for e, Initial residual = 0.012480548, Final residual = 5.4426214e-07, No Iterations 5
+Air      DILUPBiCGStab:  Solving for h, Initial residual = 0.00011116222, Final residual = 9.2896746e-09, No Iterations 1
+Air      GAMG:  Solving for p_rgh, Initial residual = 0.074806636, Final residual = 0.00037256759, No Iterations 2
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+Air      time step continuity errors : sum local = 4.044219e-10, global = 6.6201508e-17, cumulative = 1.6157825e-15
+Air      GAMG:  Solving for p_rgh, Initial residual = 0.024702371, Final residual = 8.9108368e-08, No Iterations 11
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+Air      time step continuity errors : sum local = 8.8608088e-14, global = 6.6436489e-17, cumulative = 1.682219e-15
+         ExecutionTime = 91.034521 s  ClockTime = 93 s
+         
+battery1 Diffusion Number mean: 6.8901509 max: 8.8720476
+Air      Courant Number mean: 1.697704e-05 max: 0.0012045364
+         deltaT = 1.6666667
+         Time = 80s
+         
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+battery1 DICPCG:  Solving for e, Initial residual = 0.012108957, Final residual = 5.226117e-07, No Iterations 5
+Air      DILUPBiCGStab:  Solving for h, Initial residual = 0.0001109893, Final residual = 9.2693944e-09, No Iterations 1
+Air      GAMG:  Solving for p_rgh, Initial residual = 0.074599079, Final residual = 0.00038647139, No Iterations 2
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+Air      time step continuity errors : sum local = 3.4521479e-10, global = -2.0921523e-17, cumulative = 1.6612975e-15
+Air      GAMG:  Solving for p_rgh, Initial residual = 0.025102665, Final residual = 7.2108695e-08, No Iterations 11
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+Air      time step continuity errors : sum local = 5.8718234e-14, global = -2.0951696e-17, cumulative = 1.6403458e-15
+         ExecutionTime = 92.824887 s  ClockTime = 95 s
+         
+battery1 Diffusion Number mean: 6.8901509 max: 8.8720476
+Air      Courant Number mean: 1.6688644e-05 max: 0.0011627654
+         deltaT = 1.6666667
+         Time = 81.6667s
+         
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+battery1 DICPCG:  Solving for e, Initial residual = 0.0117516, Final residual = 5.0184301e-07, No Iterations 5
+Air      DILUPBiCGStab:  Solving for h, Initial residual = 0.00011081981, Final residual = 9.2492887e-09, No Iterations 1
+Air      GAMG:  Solving for p_rgh, Initial residual = 0.073634208, Final residual = 0.00039131118, No Iterations 2
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+Air      time step continuity errors : sum local = 2.8778689e-10, global = 3.0628884e-17, cumulative = 1.6709747e-15
+Air      GAMG:  Solving for p_rgh, Initial residual = 0.025390249, Final residual = 7.9774123e-08, No Iterations 11
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+Air      time step continuity errors : sum local = 5.3536817e-14, global = 3.0559395e-17, cumulative = 1.7015341e-15
+         ExecutionTime = 93.743587 s  ClockTime = 96 s
+         
+battery1 Diffusion Number mean: 6.8901509 max: 8.8720476
+Air      Courant Number mean: 1.6412569e-05 max: 0.0011235526
+         deltaT = 1.6666667
+         Time = 83.3333s
+         
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+battery1 DICPCG:  Solving for e, Initial residual = 0.011407499, Final residual = 4.8192334e-07, No Iterations 5
+Air      DILUPBiCGStab:  Solving for h, Initial residual = 0.00011065353, Final residual = 9.2294004e-09, No Iterations 1
+Air      GAMG:  Solving for p_rgh, Initial residual = 0.071969535, Final residual = 0.00039059825, No Iterations 2
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+Air      time step continuity errors : sum local = 2.370215e-10, global = 4.847737e-17, cumulative = 1.7500115e-15
+Air      GAMG:  Solving for p_rgh, Initial residual = 0.025539459, Final residual = 8.1180126e-08, No Iterations 11
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+Air      time step continuity errors : sum local = 4.5106968e-14, global = 4.9015905e-17, cumulative = 1.7990274e-15
+         ExecutionTime = 94.617889 s  ClockTime = 97 s
+         
+battery1 Diffusion Number mean: 6.8901509 max: 8.8720476
+Air      Courant Number mean: 1.6147962e-05 max: 0.0010866672
+         deltaT = 1.6666667
+         Time = 85s
+         
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+battery1 DICPCG:  Solving for e, Initial residual = 0.011075936, Final residual = 4.6278401e-07, No Iterations 5
+Air      DILUPBiCGStab:  Solving for h, Initial residual = 0.00011049055, Final residual = 9.2094206e-09, No Iterations 1
+Air      GAMG:  Solving for p_rgh, Initial residual = 0.06955798, Final residual = 0.00039208486, No Iterations 2
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+Air      time step continuity errors : sum local = 1.9702382e-10, global = 6.6229852e-17, cumulative = 1.8652572e-15
+Air      GAMG:  Solving for p_rgh, Initial residual = 0.025545206, Final residual = 9.7023233e-08, No Iterations 11
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+Air      time step continuity errors : sum local = 4.4948796e-14, global = 6.6196022e-17, cumulative = 1.9314532e-15
+         ExecutionTime = 95.442193 s  ClockTime = 98 s
+         
+battery1 Diffusion Number mean: 6.8901509 max: 8.8720476
+Air      Courant Number mean: 1.5893725e-05 max: 0.0010515958
+         deltaT = 1.6666667
+         Time = 86.6667s
+         
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+battery1 DICPCG:  Solving for e, Initial residual = 0.010756064, Final residual = 4.4444134e-07, No Iterations 5
+Air      DILUPBiCGStab:  Solving for h, Initial residual = 0.0001103307, Final residual = 9.1890562e-09, No Iterations 1
+Air      GAMG:  Solving for p_rgh, Initial residual = 0.067135452, Final residual = 0.00039841911, No Iterations 2
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+Air      time step continuity errors : sum local = 1.6653996e-10, global = 3.0965354e-17, cumulative = 1.9624186e-15
+Air      GAMG:  Solving for p_rgh, Initial residual = 0.025549644, Final residual = 8.6452409e-08, No Iterations 12
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+Air      time step continuity errors : sum local = 3.3221864e-14, global = 3.0784318e-17, cumulative = 1.9932029e-15
+         ExecutionTime = 96.251008 s  ClockTime = 98 s
+         
+battery1 Diffusion Number mean: 6.8901509 max: 8.8720476
+Air      Courant Number mean: 1.5648812e-05 max: 0.0010182074
+         deltaT = 1.6666667
+         Time = 88.3333s
+         
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+battery1 DICPCG:  Solving for e, Initial residual = 0.010447377, Final residual = 4.2682219e-07, No Iterations 5
+Air      DILUPBiCGStab:  Solving for h, Initial residual = 0.00011017406, Final residual = 9.1684384e-09, No Iterations 1
+Air      GAMG:  Solving for p_rgh, Initial residual = 0.063963073, Final residual = 0.0003897844, No Iterations 2
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+Air      time step continuity errors : sum local = 1.362908e-10, global = 6.5937269e-17, cumulative = 2.0591402e-15
+Air      GAMG:  Solving for p_rgh, Initial residual = 0.02534437, Final residual = 8.1348208e-08, No Iterations 12
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+Air      time step continuity errors : sum local = 2.623753e-14, global = 6.632037e-17, cumulative = 2.1254606e-15
+         ExecutionTime = 97.06504 s  ClockTime = 99 s
+         
+battery1 Diffusion Number mean: 6.8901509 max: 8.8720476
+Air      Courant Number mean: 1.5412598e-05 max: 0.00098640239
+         deltaT = 1.6666667
+         Time = 90s
+         
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+battery1 DICPCG:  Solving for e, Initial residual = 0.010149223, Final residual = 4.0984632e-07, No Iterations 5
+Air      DILUPBiCGStab:  Solving for h, Initial residual = 0.00011002116, Final residual = 9.1475574e-09, No Iterations 1
+Air      GAMG:  Solving for p_rgh, Initial residual = 0.06104871, Final residual = 0.00039101722, No Iterations 2
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+Air      time step continuity errors : sum local = 1.1513149e-10, global = -2.0981869e-17, cumulative = 2.1044787e-15
+Air      GAMG:  Solving for p_rgh, Initial residual = 0.02516827, Final residual = 8.0576398e-08, No Iterations 12
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+Air      time step continuity errors : sum local = 2.1932495e-14, global = -2.1334797e-17, cumulative = 2.0831439e-15
+         ExecutionTime = 98.894521 s  ClockTime = 101 s
+         
+battery1 Diffusion Number mean: 6.8901509 max: 8.8720476
+Air      Courant Number mean: 1.5184606e-05 max: 0.00095607921
+         deltaT = 1.6666667
+         Time = 91.6667s
+         
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+battery1 DICPCG:  Solving for e, Initial residual = 0.009861081, Final residual = 3.9352744e-07, No Iterations 5
+Air      DILUPBiCGStab:  Solving for h, Initial residual = 0.00010987174, Final residual = 9.1264635e-09, No Iterations 1
+Air      GAMG:  Solving for p_rgh, Initial residual = 0.057759957, Final residual = 0.00038507786, No Iterations 2
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+Air      time step continuity errors : sum local = 9.6166166e-11, global = 3.0951639e-17, cumulative = 2.1140955e-15
+Air      GAMG:  Solving for p_rgh, Initial residual = 0.0248777, Final residual = 6.4109778e-08, No Iterations 12
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+Air      time step continuity errors : sum local = 1.4873641e-14, global = 3.0938839e-17, cumulative = 2.1450344e-15
+         ExecutionTime = 99.823546 s  ClockTime = 102 s
+         
+battery1 Diffusion Number mean: 6.8901509 max: 8.8720476
+Air      Courant Number mean: 1.4964473e-05 max: 0.00092714075
+         deltaT = 1.6666667
+         Time = 93.3333s
+         
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+battery1 DICPCG:  Solving for e, Initial residual = 0.0095824593, Final residual = 3.7791625e-07, No Iterations 5
+Air      DILUPBiCGStab:  Solving for h, Initial residual = 0.00010972562, Final residual = 9.1051165e-09, No Iterations 1
+Air      GAMG:  Solving for p_rgh, Initial residual = 0.054658974, Final residual = 0.00037687645, No Iterations 2
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+Air      time step continuity errors : sum local = 8.0452493e-11, global = 4.8640119e-17, cumulative = 2.1936745e-15
+Air      GAMG:  Solving for p_rgh, Initial residual = 0.024576526, Final residual = 6.2503475e-08, No Iterations 12
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+Air      time step continuity errors : sum local = 1.2460885e-14, global = 4.8361251e-17, cumulative = 2.2420357e-15
+         ExecutionTime = 100.71878 s  ClockTime = 103 s
+         
+battery1 Diffusion Number mean: 6.8901509 max: 8.8720476
+Air      Courant Number mean: 1.4752288e-05 max: 0.00089948217
+         deltaT = 1.6666667
+         Time = 95s
+         
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+battery1 DICPCG:  Solving for e, Initial residual = 0.009312758, Final residual = 3.6287501e-07, No Iterations 5
+Air      DILUPBiCGStab:  Solving for h, Initial residual = 0.00010958301, Final residual = 9.0835107e-09, No Iterations 1
+Air      GAMG:  Solving for p_rgh, Initial residual = 0.051124243, Final residual = 0.00036990406, No Iterations 2
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+Air      time step continuity errors : sum local = 6.7971831e-11, global = 6.6442889e-17, cumulative = 2.3084786e-15
+Air      GAMG:  Solving for p_rgh, Initial residual = 0.024189311, Final residual = 7.3789484e-08, No Iterations 12
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+Air      time step continuity errors : sum local = 1.2709501e-14, global = 6.632677e-17, cumulative = 2.3748054e-15
+         ExecutionTime = 101.54165 s  ClockTime = 104 s
+         
+battery1 Diffusion Number mean: 6.8901509 max: 8.8720476
+Air      Courant Number mean: 1.4546828e-05 max: 0.00087309414
+         deltaT = 1.6666667
+         Time = 96.6667s
+         
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+battery1 DICPCG:  Solving for e, Initial residual = 0.0090516393, Final residual = 3.4836612e-07, No Iterations 5
+Air      DILUPBiCGStab:  Solving for h, Initial residual = 0.00010944338, Final residual = 9.0618695e-09, No Iterations 1
+Air      GAMG:  Solving for p_rgh, Initial residual = 0.047353812, Final residual = 0.00037022215, No Iterations 2
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+Air      time step continuity errors : sum local = 5.9003749e-11, global = 3.0989127e-17, cumulative = 2.4057945e-15
+Air      GAMG:  Solving for p_rgh, Initial residual = 0.023657802, Final residual = 9.2718363e-08, No Iterations 12
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+Air      time step continuity errors : sum local = 1.390376e-14, global = 3.0705687e-17, cumulative = 2.4365002e-15
+         ExecutionTime = 102.65009 s  ClockTime = 105 s
+         
+battery1 Diffusion Number mean: 6.8901509 max: 8.8720476
+Air      Courant Number mean: 1.4347874e-05 max: 0.00084784673
+         deltaT = 1.6666667
+         Time = 98.3333s
+         
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+battery1 DICPCG:  Solving for e, Initial residual = 0.0087986403, Final residual = 3.3444106e-07, No Iterations 5
+Air      DILUPBiCGStab:  Solving for h, Initial residual = 0.00010930658, Final residual = 9.0401129e-09, No Iterations 1
+Air      GAMG:  Solving for p_rgh, Initial residual = 0.043825757, Final residual = 0.00035666499, No Iterations 2
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+Air      time step continuity errors : sum local = 4.9700522e-11, global = 6.633317e-17, cumulative = 2.5028334e-15
+Air      GAMG:  Solving for p_rgh, Initial residual = 0.023126966, Final residual = 7.5120896e-08, No Iterations 13
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+Air      time step continuity errors : sum local = 9.8646793e-15, global = 6.5952812e-17, cumulative = 2.5687862e-15
+         ExecutionTime = 103.86892 s  ClockTime = 106 s
+         
+battery1 Diffusion Number mean: 6.8901509 max: 8.8720476
+Air      Courant Number mean: 1.4154765e-05 max: 0.00082369312
+         deltaT = 1.6666667
+         Time = 100s
+         
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+battery1 DICPCG:  Solving for e, Initial residual = 0.0085533691, Final residual = 3.2106607e-07, No Iterations 5
+Air      DILUPBiCGStab:  Solving for h, Initial residual = 0.0001091728, Final residual = 9.0181645e-09, No Iterations 1
+Air      GAMG:  Solving for p_rgh, Initial residual = 0.040073569, Final residual = 0.00034065632, No Iterations 2
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+Air      time step continuity errors : sum local = 4.1842863e-11, global = -2.0979126e-17, cumulative = 2.5478071e-15
+Air      GAMG:  Solving for p_rgh, Initial residual = 0.022459089, Final residual = 7.1312178e-08, No Iterations 13
+Air      diagonal:  Solving for rho, Initial residual = 0, Final residual = 0, No Iterations 0
+Air      time step continuity errors : sum local = 8.2923064e-15, global = -2.1626466e-17, cumulative = 2.5261806e-15
+         ExecutionTime = 106.32454 s  ClockTime = 109 s
+         
+         End
+         

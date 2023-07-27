@@ -1,0 +1,313 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  6
+     \\/     M anipulation  |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    object      topoSetDict;
+}
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+actions
+(
+    // battery1
+    {
+        name    battery1CellSet;
+        type    cellSet;
+        action  new;
+        source  boxToCell;
+        sourceInfo
+        {
+            box (0.100 0 0.060)(0.231 0.016 0.125);
+        }
+    }
+   
+    {
+        name    battery1;
+        type    cellZoneSet;
+        action  new;
+        source  setToCellZone;
+        sourceInfo
+        {
+            set battery1CellSet;
+        }
+    }
+
+/*
+    // battery2
+    {
+        name    battery2CellSet;
+        type    cellSet;
+        action  new;
+        source  boxToCell;
+        sourceInfo
+        {
+            box (0.032 0 0.070)(0.205 0.125 0.115);
+        }
+    }
+   
+    {
+        name    battery2;
+        type    cellZoneSet;
+        action  new;
+        source  setToCellZone;
+        sourceInfo
+        {
+            set battery2CellSet;
+        }
+    }
+
+
+    // battery3
+    {
+        name    battery3CellSet;
+        type    cellSet;
+        action  new;
+        source  boxToCell;
+        sourceInfo
+        {
+            box (0.032 0 0.115)(0.205 0.125 0.160);
+        }
+    }
+   
+    {
+        name    battery3;
+        type    cellZoneSet;
+        action  new;
+        source  setToCellZone;
+        sourceInfo
+        {
+            set battery3CellSet;
+        }
+    }
+
+    // battery4
+    {
+        name    battery4CellSet;
+        type    cellSet;
+        action  new;
+        source  boxToCell;
+        sourceInfo
+        {
+            box (0.205 0 0.025)(0.378 0.125 0.070);
+        }
+    }
+   
+    {
+        name    battery4;
+        type    cellZoneSet;
+        action  new;
+        source  setToCellZone;
+        sourceInfo
+        {
+            set battery4CellSet;
+        }
+    }
+
+
+    // battery5
+    {
+        name    battery5CellSet;
+        type    cellSet;
+        action  new;
+        source  boxToCell;
+        sourceInfo
+        {
+            box (0.205 0 0.070)(0.378 0.125 0.115);
+        }
+    }
+   
+    {
+        name    battery5;
+        type    cellZoneSet;
+        action  new;
+        source  setToCellZone;
+        sourceInfo
+        {
+            set battery5CellSet;
+        }
+    }
+
+
+    // battery6
+    {
+        name    battery6CellSet;
+        type    cellSet;
+        action  new;
+        source  boxToCell;
+        sourceInfo
+        {
+            box (0.205 0 0.115)(0.378 0.125 0.160);
+        }
+    }
+   
+    {
+        name    battery6;
+        type    cellZoneSet;
+        action  new;
+        source  setToCellZone;
+        sourceInfo
+        {
+            set battery6CellSet;
+        }
+    }*/
+
+/*
+    // leftSolid
+    {
+        name    leftSolidCellSet;
+        type    cellSet;
+        action  new;
+        source  boxToCell;
+        sourceInfo
+        {
+            box (-100 0 -100 )(-0.01001 0.00999 100);
+        }
+    }
+    {
+        name    leftSolid;
+        type    cellZoneSet;
+        action  new;
+        source  setToCellZone;
+        sourceInfo
+        {
+            set leftSolidCellSet;
+        }
+    }
+
+    // rightSolid
+    {
+        name    rightSolidCellSet;
+        type    cellSet;
+        action  new;
+        source  boxToCell;
+        sourceInfo
+        {
+            box (0.01001 0 -100 )(100 0.00999 100);
+        }
+    }
+    {
+        name    rightSolid;
+        type    cellZoneSet;
+        action  new;
+        source  setToCellZone;
+        sourceInfo
+        {
+            set rightSolidCellSet;
+        }
+    }
+
+    // topAir
+    {
+        name    topAirCellSet;
+        type    cellSet;
+        action  new;
+        source  boxToCell;
+        sourceInfo
+        {
+            box (-100 0.00999 -100 )(100 100 100);
+        }
+    }
+    {
+        name    topAir;
+        type    cellZoneSet;
+        action  new;
+        source  setToCellZone;
+        sourceInfo
+        {
+            set topAirCellSet;
+        }
+    }
+
+*/
+    // bottomWater is all the other cells
+    {
+        name    AirCellSet;
+        type    cellSet;
+        action  new;
+        source  cellToCell;
+        sourceInfo
+        {
+            set battery1CellSet;
+        }
+    }
+/*    {
+        name    AirCellSet;
+        type    cellSet;
+        action  add;
+        source  cellToCell;
+        sourceInfo
+        {
+            set battery2CellSet;
+        }
+    }
+    {
+        name    AirCellSet;
+        type    cellSet;
+        action  add;
+        source  cellToCell;
+        sourceInfo
+        {
+            set battery3CellSet;
+        }
+    }
+    {
+        name    AirCellSet;
+        type    cellSet;
+        action  add;
+        source  cellToCell;
+        sourceInfo
+        {
+            set battery4CellSet;
+        }
+    }
+   
+    {
+        name    AirCellSet;
+        type    cellSet;
+        action  add;
+        source  cellToCell;
+        sourceInfo
+        {
+            set battery5CellSet;
+        }
+    }
+
+    {
+        name    AirCellSet;
+        type    cellSet;
+        action  add;
+        source  cellToCell;
+        sourceInfo
+        {
+            set battery6CellSet;
+        }
+    }*/
+
+    {
+        name    AirCellSet;
+        type    cellSet;
+        action  invert;
+    }
+    {
+        name    Air;
+        type    cellZoneSet;
+        action  new;
+        source  setToCellZone;
+        sourceInfo
+        {
+            set AirCellSet;
+        }
+    }
+);
+
+
+// ************************************************************************* //
+

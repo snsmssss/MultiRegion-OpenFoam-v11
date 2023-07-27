@@ -1,0 +1,64 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  6
+     \\/     M anipulation  |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    location    "constant";
+    object      fvOptions;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+sources
+(
+
+energySource
+{
+//    type		scalarSemiImplicitSource;
+    type		semiImplicitSource;
+    active		yes;
+    selectionMode	cellZone;
+    cellZone		battery1;
+    volumeMode		specific;
+    injectionRateSuSp
+    {
+      h		(29359.953 0);
+    }
+}
+
+/*momentumSource
+{
+    type		explicitPorositySource;
+    explicitPorositySourceCoeffs
+	{
+	    type	powerLaw;
+	    powerLawCoeffs
+	    {
+		C0                  ; // To be completed
+    		C1                  ; // To be completed
+		// To be completed
+		coordinateSystem
+    		{
+        	    type    cartesian;
+        	    origin  (0 0 0);
+        	    coordinateRotation
+        	    {
+            		type   axesRotation;
+            		e1  (1 0 0);
+            		e2  (0 1 0);
+        	    }
+    		}
+	    }
+	}
+
+}*/
+
+);
+// ************************************************************************* //
+

@@ -1,0 +1,58 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  2112                                  |
+|   \\  /    A nd           | Website:  www.openfoam.com                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    arch        "LSB;label=32;scalar=64";
+    class       volVectorField;
+    location    "0/Air";
+    object      U;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+dimensions      [ 0 1 -1 0 0 0 0 ];
+
+internalField   uniform ( 0.001 0 0 );
+
+boundaryField
+{
+    inlet
+    {
+        type            noSlip;
+        value           uniform ( 0.01 0 0 );
+    }
+    outlet
+    {
+        type            noSlip;
+        value           uniform ( 0.01 0 0 );
+    }
+    walls
+    {
+        type            noSlip;
+        value           uniform ( 0.01 0 0 );
+    }
+    Air_to_battery1
+    {
+        type            noSlip;
+        value           uniform ( 0 0 0 );
+    }
+    minX
+    {
+        type            fixedValue;
+        value           uniform ( 0.001 0 0 );
+    }
+    maxX
+    {
+        type            inletOutlet;
+        inletValue      uniform ( 0 0 0 );
+    }
+}
+
+
+// ************************************************************************* //

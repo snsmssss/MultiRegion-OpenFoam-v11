@@ -1,0 +1,92 @@
+/*---------------------------------------------------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  11
+     \\/     M anipulation  |
+\*---------------------------------------------------------------------------*/
+Build  : 11-d496a603da00
+Exec   : changeDictionary -region battery1
+Date   : Jul 27 2023
+Time   : 13:21:24
+Host   : "photon"
+PID    : 1646739
+I/O    : uncollated
+Case   : /home/sambath/cloud/multiRegionTutorial
+nProcs : 1
+sigFpe : Enabling floating point exception trapping (FOAM_SIGFPE).
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster (fileModificationSkew 10)
+allowSystemOperations : Allowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+--> FOAM Warning : 
+changeDictionary has been superseded by foamDictionary and is now deprecated.
+
+Create time
+
+Create mesh battery1 for time = 0
+
+Reading "changeDictionaryDict"
+
+Read dictionary "/home/sambath/cloud/multiRegionTutorial/system/battery1/changeDictionaryDict" with replacements for dictionaries 
+2
+(
+T
+p
+)
+
+Reading polyMesh/boundary file to extract patch names
+Loaded dictionary boundary with entries 
+2
+(
+walls
+battery1_to_Air
+)
+
+Extracted patch groups:
+    group wall with patches 
+2
+(
+walls
+battery1_to_Air
+)
+
+Replacing entries in dictionary T
+Loading dictionary T
+Loaded dictionary T with entries 
+3
+(
+dimensions
+internalField
+boundaryField
+)
+
+Merging entries from 
+2
+(
+internalField
+boundaryField
+)
+
+Writing modified fieldDict T
+Replacing entries in dictionary p
+Loading dictionary p
+Loaded dictionary p with entries 
+3
+(
+dimensions
+internalField
+boundaryField
+)
+
+Merging entries from 
+2
+(
+internalField
+boundaryField
+)
+
+Writing modified fieldDict p
+
+End
+
