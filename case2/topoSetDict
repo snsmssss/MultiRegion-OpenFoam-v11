@@ -1,0 +1,379 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  6
+     \\/     M anipulation  |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    object      topoSetDict;
+}
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+actions
+(
+    // batteries
+    {
+        name    batteriesCellSet;
+        type    cellSet;
+        action  new;
+        source  boxToCell;
+        sourceInfo
+        {
+            box (0.010 0.003 0)(0.026 0.068 0.066);
+        }
+    }
+
+//battery2
+    {
+        name    batteriesCellSet;
+        type    cellSet;
+        action  add;
+        source  boxToCell;
+        sourceInfo
+        {
+            box (0.028 0.003 0)(0.044 0.068 0.066);
+        }
+    }
+
+
+//battery3
+    {
+        name    batteriesCellSet;
+        type    cellSet;
+        action  add;
+        source  boxToCell;
+        sourceInfo
+        {
+            box (0.046 0.003 0)(0.062 0.068 0.066);
+        }
+    }
+   
+
+//battery4
+    {
+        name    batteriesCellSet;
+        type    cellSet;
+        action  add;
+        source  boxToCell;
+        sourceInfo
+        {
+            box (0.064 0.003 0)(0.080 0.068 0.066);
+        }
+    }
+
+//battery5
+    {
+        name    batteriesCellSet;
+        type    cellSet;
+        action  add;
+        source  boxToCell;
+        sourceInfo
+        {
+            box (0.082 0.003 0)(0.098 0.068 0.066);
+        }
+    }
+
+
+//battery6
+    {
+        name    batteriesCellSet;
+        type    cellSet;
+        action  add;
+        source  boxToCell;
+        sourceInfo
+        {
+            box (0.100 0.003 0)(0.116 0.068 0.066);
+        }
+    }
+
+
+//battery7
+    {
+        name    batteriesCellSet;
+        type    cellSet;
+        action  add;
+        source  boxToCell;
+        sourceInfo
+        {
+            box (0.118 0.003 0)(0.134 0.068 0.066);
+        }
+    }
+
+
+//battery8
+    {
+        name    batteriesCellSet;
+        type    cellSet;
+        action  add;
+        source  boxToCell;
+        sourceInfo
+        {
+            box (0.136 0.003 0)(0.152 0.068 0.066);
+        }
+    }
+
+
+//battery9
+    {
+        name    batteriesCellSet;
+        type    cellSet;
+        action  add;
+        source  boxToCell;
+        sourceInfo
+        {
+            box (0.154 0.003 0)(0.170 0.068 0.066);
+        }
+    }
+
+
+//battery10
+    {
+        name    batteriesCellSet;
+        type    cellSet;
+        action  add;
+        source  boxToCell;
+        sourceInfo
+        {
+            box (0.172 0.003 0)(0.188 0.068 0.066);
+        }
+    }
+
+
+//battery11
+    {
+        name    batteriesCellSet;
+        type    cellSet;
+        action  add;
+        source  boxToCell;
+        sourceInfo
+        {
+            box (0.190 0.003 0)(0.206 0.068 0.066);
+        }
+    }
+
+
+//battery12
+    {
+        name    batteriesCellSet;
+        type    cellSet;
+        action  add;
+        source  boxToCell;
+        sourceInfo
+        {
+            box (0.208 0.003 0)(0.224 0.068 0.066);
+        }
+    }
+
+
+//battery13
+    {
+        name    batteriesCellSet;
+        type    cellSet;
+        action  add;
+        source  boxToCell;
+        sourceInfo
+        {
+            box (0.226 0.003 0)(0.242 0.068 0.066);
+        }
+    }
+
+
+//battery14
+    {
+        name    batteriesCellSet;
+        type    cellSet;
+        action  add;
+        source  boxToCell;
+        sourceInfo
+        {
+            box (0.244 0.003 0)(0.260 0.068 0.066);
+        }
+    }
+
+
+//battery15
+    {
+        name    batteriesCellSet;
+        type    cellSet;
+        action  add;
+        source  boxToCell;
+        sourceInfo
+        {
+            box (0.262 0.003 0)(0.278 0.068 0.066);
+        }
+    }
+
+    {
+        name    batteries;
+        type    cellZoneSet;
+        action  new;
+        source  setToCellZone;
+        sourceInfo
+        {
+            set batteriesCellSet;
+        }
+    }
+
+
+// Air is all the other cells
+    {
+        name    AirCellSet;
+        type    cellSet;
+        action  new;
+        source  boxToCell;
+        sourceInfo
+        {
+            box (0 0.003 0)(0.288 0.068 0.066);
+        }
+    }
+    {
+        name    AirCellSet;
+        type    cellSet;
+        action  delete;
+        source  cellToCell;
+        sourceInfo
+        {
+            set batteriesCellSet;
+        }
+    }
+
+    {
+        name    Air;
+        type    cellZoneSet;
+        action  new;
+        source  setToCellZone;
+        sourceInfo
+        {
+            set AirCellSet;
+        }
+    }
+
+//BottomCoolant
+    {
+        name    bottomCoolantCellSet;
+        type    cellSet;
+        action  new;
+        source  boxToCell;
+        sourceInfo
+        {
+            box (0 0 0)(0.288 0.002 0.066);
+        }
+    }
+
+    {
+        name    bottomCoolant;
+        type    cellZoneSet;
+        action  new;
+        source  setToCellZone;
+        sourceInfo
+        {
+            set bottomCoolantCellSet;
+        }
+    }
+
+
+
+//topCoolant
+    {
+        name    topCoolantCellSet;
+        type    cellSet;
+        action  new;
+        source  boxToCell;
+        sourceInfo
+        {
+            box (0 0.069 0)(0.288 0.071 0.066);
+        }
+    }
+
+    {
+        name    topCoolant;
+        type    cellZoneSet;
+        action  new;
+        source  setToCellZone;
+        sourceInfo
+        {
+            set topCoolantCellSet;
+        }
+    }
+
+//silicaGel
+    {
+        name    silicaGelCellSet;
+        type    cellSet;
+        action  new;
+        source  boxToCell;
+        sourceInfo
+        {
+            box (0 0.002 0)(0.288 0.003 0.066);
+        }
+    }
+
+
+    {
+        name    silicaGelCellSet;
+        type    cellSet;
+        action  add;
+        source  boxToCell;
+        sourceInfo
+        {
+            box (0 0.068 0)(0.288 0.069 0.066);
+        }
+    }
+
+    {
+        name    silicaGel;
+        type    cellZoneSet;
+        action  new;
+        source  setToCellZone;
+        sourceInfo
+        {
+            set silicaGelCellSet;
+        }
+    }
+
+   /* {
+        name    AirCellSet;
+        type    cellSet;
+        action  add;
+        source  cellToCell;
+        sourceInfo
+        {
+            set topCoolantCellSet;
+        }
+    }
+    {
+        name    AirCellSet;
+        type    cellSet;
+        action  add;
+        source  cellToCell;
+        sourceInfo
+        {
+            set silicaGelCellSet;
+        }
+    }    
+
+    {
+        name    AirCellSet;
+        type    cellSet;
+        action  invert;
+    }
+    {
+        name    Air;
+        type    cellZoneSet;
+        action  new;
+        source  setToCellZone;
+        sourceInfo
+        {
+            set AirCellSet;
+        }
+    }*/
+);
+
+
+// ************************************************************************* //

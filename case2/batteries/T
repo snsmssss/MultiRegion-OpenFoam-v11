@@ -1,0 +1,71 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  6
+     \\/     M anipulation  |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       volScalarField;
+    location    "0/batteries";
+    object      T;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+dimensions      [ 0 0 0 1 0 0 0 ];
+
+internalField   uniform 298;
+
+boundaryField
+{
+    #includeEtc "caseDicts/setConstraintTypes"
+
+    inlet
+    {
+        type            zeroGradient;
+        
+    }
+    outlet
+    {
+        type            zeroGradient;
+        
+    }
+
+    walls
+    {
+        type            zeroGradient;
+        
+    }
+    back
+    {
+	type		symmetry;
+    }
+ 
+/*   "batteries_to_Air"
+    {
+        type            compressible::turbulentTemperatureCoupledBaffleMixed;
+        value           $internalField;
+        Tnbr            T;
+	//thicknessLayers	(0.005);
+	//kappaLayers	(0.832);
+        kappaMethod     solidThermo;
+	type		zeroGradient;
+    }
+*/
+
+   "batteries_to_.*"
+    {
+        type            compressible::turbulentTemperatureCoupledBaffleMixed;
+        value           $internalField;
+        Tnbr            T;
+	//thicknessLayers	(0.005);
+	//kappaLayers	(0.832);
+        kappaMethod     solidThermo;
+    }
+}
+
+
+// ************************************************************************* //
